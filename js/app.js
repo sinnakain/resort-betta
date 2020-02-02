@@ -1,26 +1,39 @@
 "use strict";
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
 
 /* ^^^
  * Глобальные-вспомогательные функции
  * ========================================================================== */
 
 /**
-  * Возвращает HTML-код иконки из SVG-спрайта
-  *
-  * @param {String} name Название иконки из спрайта
-  * @param {Object} opts Объект настроек для SVG-иконки
-  *
-  * @example SVG-иконка
-  * getSVGSpriteIcon('some-icon', {
-  *   tag: 'div',
-  *   type: 'icons', // colored для подключения иконки из цветного спрайта
-  *   class: '', // дополнительные классы для иконки
-  *   mode: 'inline', // external для подключаемых спрайтов
-  *   url: '', // путь до файла спрайта, необходим только для подключаемых спрайтов
-  * });
-  */
+ * Возвращает HTML-код иконки из SVG-спрайта
+ *
+ * @param {String} name Название иконки из спрайта
+ * @param {Object} opts Объект настроек для SVG-иконки
+ *
+ * @example SVG-иконка
+ * getSVGSpriteIcon('some-icon', {
+ *   tag: 'div',
+ *   type: 'icons', // colored для подключения иконки из цветного спрайта
+ *   class: '', // дополнительные классы для иконки
+ *   mode: 'inline', // external для подключаемых спрайтов
+ *   url: '', // путь до файла спрайта, необходим только для подключаемых спрайтов
+ * });
+ */
 function getSVGSpriteIcon(name, opts) {
   opts = _extends({
     tag: 'div',
@@ -43,6 +56,7 @@ function getSVGSpriteIcon(name, opts) {
   opts["class"] = opts["class"] ? " ".concat(opts["class"]) : '';
   return "\n    <".concat(opts.tag, " class=\"svg-icon svg-icon--").concat(name).concat(typeClass).concat(opts["class"], "\" aria-hidden=\"true\" focusable=\"false\">\n      <svg class=\"svg-icon__link\">\n        <use xlink:href=\"").concat(external, "#").concat(name, "\"></use>\n      </svg>\n    </").concat(opts.tag, ">\n  ");
 }
+
 /* ^^^
  * JQUERY Actions
  * ========================================================================== */
@@ -294,7 +308,7 @@ $(function () {
     //     $.each($form.find(inputSpinner), function(){
     //         var $counter = $(this).find('.js-input-spinner-counter');
     //         $counter.attr('placeholder', '');
-    //     });                
+    //     });
     // });
     // $(document).on('click', function(){
     //     $('.js-input-spinner-counter').attr('placeholder', '.');
