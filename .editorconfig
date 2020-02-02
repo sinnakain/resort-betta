@@ -1,5 +1,4 @@
-# editorconfig.org
-
+# Единые настройки для всех IDE
 root = true
 
 [*]
