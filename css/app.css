@@ -874,6 +874,9 @@ html {
   margin-left: auto;
   margin-bottom: 45px;
   text-align: justify;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .about__text p:first-child {
@@ -1668,7 +1671,7 @@ html {
 
 .button--large {
   border-radius: 4px;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 33px;
   letter-spacing: 1px;
   height: 87px;
@@ -2908,7 +2911,7 @@ html {
   text-align: center;
   color: #fdfdfd;
   padding: 40px 20px 45px;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 25px;
 }
 
@@ -4140,7 +4143,7 @@ html {
   }
 
   .about {
-    padding-bottom: 195px;
+    padding-bottom: 125px;
   }
 
   .about__body {
@@ -4455,7 +4458,7 @@ html {
   }
 
   .apartments {
-    padding-bottom: 92px;
+    padding-bottom: 62px;
   }
 
   .apartments__headline {
@@ -4576,7 +4579,6 @@ html {
 
   .button--large {
     height: 114px;
-    font-size: 28px;
     line-height: 38px;
     width: 270px;
     max-width: 270px;
