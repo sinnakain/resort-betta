@@ -64,10 +64,10 @@ function getSVGSpriteIcon(name, opts) {
 
 $(function () {
   'use strict';
-  /**
-   * определение существования элемента на странице
-   */
 
+  /**
+   * Check element existence
+   */
   $.exists = function (selector) {
     return $(selector).length > 0;
   };
@@ -155,15 +155,25 @@ $(function () {
     initApartmentImages();
   }
 
+  var $body = $('body');
+
+
+  /* ========================================================================== */
   var $asideNav = $('.js-aside-nav');
-  var $asideNavOverlay = $('.js-aside-nav-overlay');
-  var $asideNavInner = $('.js-aside-nav-inner');
   var $asideNavScroller = $('.js-aside-nav-scroller');
   var toogleAsideNav = '.js-toggle-aside-nav';
-  var navIsOpened = false;
-  var $body = $('body');
-  var $asideWorksappendnow = $('.js-works-append-now');
+  var $asideNavOverlay = $('.js-aside-nav-overlay');
   var $navScroller = $asideNavScroller.filter('[data-nav="menu"]');
+
+  // todo not nedded?
+  var $asideWorksappendnow = $('.js-works-append-now');
+  var $asideNavInner = $('.js-aside-nav-inner');
+
+  var navIsOpened = false;
+
+  /**
+   * Toggle visibility of the navigation menu
+   */
   $(document).on('click', toogleAsideNav, function (event) {
     event.preventDefault();
     $asideNav.toggleClass('is-opened');
@@ -188,6 +198,10 @@ $(function () {
       $asideNav.removeClass('is-opened-filter');
     }
   });
+
+  /**
+   * Hide navigation menu if window > 1280px
+   */
   $(window).on('resize', function () {
     if (window.matchMedia('(min-width: 1280px').matches) {
       if (navIsOpened) {
@@ -197,13 +211,22 @@ $(function () {
       }
     }
   });
-  $asideWorksappendnow.on('click', function (event) {
+
+  /**
+   * Hide navigation menu on aside click
+   */
+  $asideNavOverlay.on('click', function (event) {
     navIsOpened = false;
     $asideNav.removeClass('is-opened');
     $asideNav.removeClass('is-opened-menu');
     $asideNav.removeClass('is-opened-filter');
     bodyScrollLock.enableBodyScroll();
   });
+
+  /* ^^^
+   * Left navigation menu (for mobile devices)
+   * ========================================================================== */
+
   var cardImages = '.js-card-images-gallery';
 
   function initCardImages() {
