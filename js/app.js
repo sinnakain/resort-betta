@@ -15,8 +15,26 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-/* ^^^
- * Глобальные-вспомогательные функции
+function _showElement(element) {
+  element.removeAttribute('hidden');
+}
+
+var getUrlParameter = function getUrlParameter(sParam) {
+  var sPageURL = window.location.search.substring(1),
+    sURLVariables = sPageURL.split('&'),
+    sParameterName,
+    i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split('=');
+
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+    }
+  }
+};
+
+/* ^^^ Глобальные-вспомогательные функции
  * ========================================================================== */
 
 /**
@@ -57,8 +75,7 @@ function getSVGSpriteIcon(name, opts) {
   return "\n    <".concat(opts.tag, " class=\"svg-icon svg-icon--").concat(name).concat(typeClass).concat(opts["class"], "\" aria-hidden=\"true\" focusable=\"false\">\n      <svg class=\"svg-icon__link\">\n        <use xlink:href=\"").concat(external, "#").concat(name, "\"></use>\n      </svg>\n    </").concat(opts.tag, ">\n  ");
 }
 
-/* ^^^
- * JQUERY Actions
+/* ^^^ JQUERY Actions
  * ========================================================================== */
 
 
@@ -72,46 +89,50 @@ $(function () {
     return $(selector).length > 0;
   };
 
-  var ajaxLoader = '.js-ajax-loader';
-  var limitCounter = 0;
-  var ajaxLimit = 2;
-  var isLoading = false;
-
-  function initAjaxLoader() {
-    var $ajaxLoader = $(ajaxLoader);
-    var $target = $ajaxLoader.data('target');
-    var url = $ajaxLoader.data('url');
-
-    var loader = function loader() {
-      if (limitCounter >= ajaxLimit) {
-        $ajaxLoader.addClass('is-hidden');
-        return false;
-      }
-
-      if (isLoading) {
-        return;
-      }
-
-      isLoading = true;
-      $ajaxLoader.removeClass('is-hidden');
-      $.ajax({
-        url: url,
-        success: function success(res) {
-          $(res).appendTo($target);
-          $ajaxLoader.addClass('is-hidden');
-          limitCounter++;
-          isLoading = false;
-          initApartmentImages();
-        }
-      });
-    };
-
-    inView(ajaxLoader).on('enter', loader);
-  }
-
-  if ($.exists(ajaxLoader)) {
-    initAjaxLoader();
-  }
+  // FIXME add async load from back-end
+  // var ajaxLoader = '.js-ajax-loader';
+  // var limitCounter = 0;
+  // var ajaxLimit = 2;
+  // var isLoading = false;
+  // var delayLoding = 1000;
+  //
+  // function initAjaxLoader() {
+  //   var $ajaxLoader = $(ajaxLoader);
+  //   var $target = $ajaxLoader.data('target');
+  //   var url = $ajaxLoader.data('url');
+  //
+  //   var loader = function loader() {
+  //     if (limitCounter >= ajaxLimit) {
+  //       $ajaxLoader.addClass('is-hidden');
+  //       return false;
+  //     }
+  //
+  //     if (isLoading) {
+  //       return;
+  //     }
+  //
+  //     isLoading = true;
+  //     $ajaxLoader.removeClass('is-hidden');
+  //     $.ajax({
+  //       url: url,
+  //       success: function success(res) {
+  //         setTimeout(function () {
+  //           $(res).appendTo($target);
+  //           $ajaxLoader.addClass('is-hidden');
+  //           limitCounter++;
+  //           isLoading = false;
+  //           initApartmentImages();
+  //         }, delayLoding);
+  //       }
+  //     });
+  //   };
+  //
+  //   inView(ajaxLoader).on('enter', loader);
+  // }
+  //
+  // if ($.exists(ajaxLoader)) {
+  //   initAjaxLoader();
+  // }
 
   var apartmentImages = '.js-apartment-images';
   var apartmentCounter = 0;
@@ -223,8 +244,7 @@ $(function () {
     bodyScrollLock.enableBodyScroll();
   });
 
-  /* ^^^
-   * Left navigation menu (for mobile devices)
+  /* ^^^ Left navigation menu (for mobile devices)
    * ========================================================================== */
 
   var cardImages = '.js-card-images-gallery';
@@ -258,11 +278,65 @@ $(function () {
     initCardImages();
   }
 
-  $('.js-form-open').on('click', function (event) {
-    event.preventDefault();
-    $(this).hide();
-    $('.js-form').slideDown();
-  });
+  /* ^^^ Appartament-card slide-show
+   * ========================================================================== */
+
+  var counters = '.js-counter';
+
+  function counterUp(counter) {
+    var isInitialized = counter.classList.contains('is-inited');
+
+    if (isInitialized) {
+      return;
+    }
+
+    var demo = new CountUp(counter, 0, counter.dataset.counterUp);
+
+    if (!demo.error) {
+      demo.start();
+    } else {
+      console.error(demo.error);
+    }
+
+    counter.classList.add('is-inited');
+  }
+
+  if ($.exists(counters)) {
+    inView(counters).on('enter', counterUp);
+  }
+
+  /* ^^^ Increase number counters on viewing
+   * ========================================================================== */
+
+  var apartmentItems = $('.apartments__item');
+  var personsURL = Number.parseInt(getUrlParameter('persons'));
+  var isValidPersonURL = personsURL && personsURL >= 0 && personsURL < 100;
+
+  /**
+   * Filter apartments by persons count
+   */
+  function doFilterApartments() {
+    apartmentItems.each(function(i, item) {
+      if(isValidPersonURL) {
+        var item_count_raw = (item.getAttribute('data-persons-count') || "").split('-');
+        var minPersons = Number.parseInt(item_count_raw[0]),
+          maxPersons = Number.parseInt(item_count_raw[1]);
+
+        var correctSpace = minPersons && maxPersons && maxPersons >= minPersons;
+        if(correctSpace && minPersons <= personsURL && personsURL <= maxPersons) {
+          _showElement(item);
+        }
+      } else {
+        _showElement(item);
+      }
+    });
+  }
+
+  if(apartmentItems.length > 0) {
+    doFilterApartments();
+  }
+
+
   var inputSpinner = '.js-ipnut-spinner';
 
   function initInputSpinner() {
@@ -272,6 +346,14 @@ $(function () {
       var $plus = $this.find('.js-input-spinner-plus');
       var $counter = $this.find('.js-input-spinner-counter');
       var maxlength = $counter.data('maxlength'); // prevent paste and drop value
+
+      var $selectedValue = $this.find('.counter__selected');
+
+      // set current person value from URL
+      if(isValidPersonURL) {
+        $this.addClass('counter--reservation');
+        $selectedValue.text(personsURL);
+      }
 
       $counter.on('paste drop', function (event) {
         event.preventDefault();
@@ -343,6 +425,11 @@ $(function () {
       event.preventDefault();
       var $this = $(this);
       var $counter = $(this).closest(inputSpinner);
+
+      var $counterInput = $counter.find('.js-input-spinner-counter');
+      var $selectedValue = $counter.find('.counter__selected');
+
+      $counterInput.val($selectedValue.text());
       $counter.removeClass('counter--reservation');
     };
 
@@ -353,29 +440,15 @@ $(function () {
     initInputSpinner();
   }
 
-  var counters = '.js-counter';
+  /* ^^^ Count of persons control
+   * ========================================================================== */
 
-  function counterUp(counter) {
-    var isInitialized = counter.classList.contains('is-inited');
 
-    if (isInitialized) {
-      return;
-    }
-
-    var demo = new CountUp(counter, 0, counter.dataset.counterUp);
-
-    if (!demo.error) {
-      demo.start();
-    } else {
-      console.error(demo.error);
-    }
-
-    counter.classList.add('is-inited');
-  }
-
-  if ($.exists(counters)) {
-    inView(counters).on('enter', counterUp);
-  }
+  $('.js-form-open').on('click', function (event) {
+    event.preventDefault();
+    $(this).hide();
+    $('.js-form').slideDown();
+  });
 
   $('.js-form-submit').on('click', function (event) {
     event.stopPropagation();
@@ -494,6 +567,10 @@ $(function () {
     setAppBg();
   }
 
+  /* ^^^ Callback Request Form
+   * ========================================================================== */
+
+
   var rating = '.js-rating';
 
   function initRating() {
@@ -536,6 +613,9 @@ $(function () {
     initReviewsSlider();
   }
 
+  /* ^^^ Slider reviews
+   * ========================================================================== */
+
   $('.js-selection-submit').on('click', function (event) {
     var $input = $('input');
 
@@ -577,4 +657,8 @@ $(function () {
   if ($.exists(tabs)) {
     initTabs();
   }
+
+  /* ^^^ Tabs
+   * ========================================================================== */
+
 });
