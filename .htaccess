@@ -378,6 +378,19 @@ AddDefaultCharset utf-8
     RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
 </IfModule>
 
+# Rewrite
+#   example.com/index.php?page=page_name → example.com/page_name
+
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+        Options +FollowSymlinks
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php?page=$1 [L]
+</IfModule>
+
 # ----------------------------------------------------------------------
 # | Forcing the `www.` at the beginning of URLs                        |
 # ----------------------------------------------------------------------
