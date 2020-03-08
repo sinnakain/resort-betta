@@ -184,27 +184,24 @@
 
             </button>
 
-            <? require 'nav_menu_template.php'; ?>
+            <? require 'modules/main_menu.php'; ?>
 
         </div>
     </header><!-- b:app-header -->
 
 
     <div class="app__content">
-
         <main class="app__main">
             <? page_content() ?>
 
             <? page_modules() ?>
-        </main><!-- e:main -->
-
-
-    </div><!-- b:m-content -->
+        </main>
+    </div>
 
     <? require 'modules/footer.phtml'; ?>
 
     <!-- left aside menu -->
-    <? require 'nav_menu_aside_template.php'; ?>
+    <? require 'modules/menu_aside.php'; ?>
 
     <div class="pickmeup-selected-alert js-pickmeup-alert">
         <div class="pickmeup-selected-alert__content js-pickmeup-alert-content">6 дней</div>
