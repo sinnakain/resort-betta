@@ -21,8 +21,10 @@ function config($key = '')
             'contacts' => 'Контакты'
         ],
         'content_path' => 'pages',
-        'version' => 'v3.0',
 
+        'social_vk_link' => 'https://vk.com/resort_betta',
+        'social_insta_link' => 'https://instagram.com/resort_betta',
+        'social_whatsapp_link' => 'https://wa.me/79998141435',
 
         'modules_path' => '/template/modules',
 
