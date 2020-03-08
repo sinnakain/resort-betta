@@ -2,7 +2,7 @@
     <ul>
         <?php
         $menu_items = config('nav_menu');
-        $menu_size = sizeof(config('nav_menu'));
+        $menu_size = sizeof($menu_items);
 
         $left_count = intdiv($menu_size, 2) + $menu_size % 2;
 

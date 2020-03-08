@@ -2,22 +2,31 @@
     <div class="app-footer__container container">
         <div class="app-footer__nav">
             <ul>
+                <?
+                    $menu_items = config('nav_menu');
+                    $menu_size = sizeof($menu_items);
 
-                <li class="is-active"><a href="index.html">Главная</a></li>
+                    $left_count = intdiv($menu_size, 2) + $menu_size % 2;
 
-                <li><a href="about.html">О нас</a></li>
 
-                <li><a href="reservation.html">Бронирование</a></li>
+                    $counter = 0;
+                    foreach ($menu_items as $path => $display_name) {
 
-            </ul>
-            <ul>
+                        // reopen ul tag
+                        if ($left_count == $counter) {
+                            echo '</ul><ul>';
+                        }
 
-                <li><a href="how-to-get.html">Как добраться</a></li>
+                        $is_current_page = get_current_page() === $path
+                            || (get_current_page() === 'home' && $path === '');
 
-                <li><a href="resort-betta.html">Курорт “Бетта”</a></li>
+                        $class_attr = $is_current_page ? ' class="is-active"' : '';
 
-                <li><a href="contacts.html">Контакты</a></li>
+                        echo '<li' . $class_attr . '><a href="/' . $path . '">' . $display_name . '</a></li>';
 
+                        $counter++;
+                    }
+                ?>
             </ul>
         </div>
 
@@ -40,6 +49,9 @@
                     <a href="tel:+79889542097">+7 (988) 954-20-97</a>
                 </div>
                 <div class="app-footer__phone">
+                    <a href="tel:+79604896093">+7 (918) 467-18-44</a>
+                </div>
+                <div class="app-footer__phone" hidden>
                     <a href="tel:+79604896093">+7 (960) 489-60-93</a>
                 </div>
             </div>
