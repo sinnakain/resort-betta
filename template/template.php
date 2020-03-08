@@ -198,7 +198,7 @@
         </main>
     </div>
 
-    <? require 'modules/footer.phtml'; ?>
+    <? require 'modules/footer.php'; ?>
 
     <!-- left aside menu -->
     <? require 'modules/menu_aside.php'; ?>

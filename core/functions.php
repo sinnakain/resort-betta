@@ -47,10 +47,10 @@ function page_modules() {
     }
 
     foreach($active_modules as $i => $module) {
-        $module_file = getcwd() . config('modules_path') . '/' . $module . '.phtml';
+        $module_file = getcwd() . config('modules_path') . '/' . $module . '.php';
 
         if(file_exists($module_file)) {
-            echo file_get_contents($module_file);
+            require $module_file;
         }
     }
 }
