@@ -31,27 +31,34 @@ function config($key = '')
         // Page configuration todo remove this
         'pages_config' => [
             'home' => [
+                'hero_image' => '/img/hero-pick-up-bg.png',
                 'body_classname' => 'app--home',
                 'modules' => ['reviews']
             ],
             'about-us' => [
+                'hero_image' => '/img/hero-pick-up-bg.png',
                 'body_classname' => 'app--about',
                 'modules' => ['reviews']
             ],
             'reservation' => [
+                'hero_image' => '/img/hero-pick-up-bg.png',
                 'body_classname' => 'app--reservation',
                 'modules' => ['reviews']
             ],
             'how-to-get' => [
+                'hero_image' => '/img/hero-pick-up-bg.png',
                 'body_classname' => 'app--how-to-get',
             ],
             'resort-betta' => [
+                'hero_image' => '/img/hero-pick-up-bg.png',
                 'body_classname' => 'app--resort-betta',
             ],
             'contacts' => [
+                'hero_image' => '/img/hero-pick-up-bg.png',
                 'body_classname' => 'app--contacts',
             ],
             'reservation/apartment' => [
+                'hero_image' => '/img/hero-pick-up-bg.png',
                 'body_classname' => 'app--card',
                 'modules' => ['reviews']
             ]

@@ -1,34 +1,27 @@
 <div class="hero hero--inside">
-    <div class="hero__bg js-app-bg" data-bg="img/hero-pick-up-bg.png"></div>
+    <div class="hero__bg js-app-bg" data-bg="<?=page_config('hero_image')?>"></div>
 
     <div class="hero__content">
         <div class="hero__text">
 
             <h1 class="hero__header h1">Контакты</h1>
 
-
             <nav class="crumbs">
                 <div class="crumbs__items">
 
                     <div class="crumbs__item">
-
-                        <a href="index.html" class="crumbs__link">Главная</a>
+                        <a href="/" class="crumbs__link">Главная</a>
                         <span class="crumbs__sep">
-
-      <span class="svg-icon svg-icon--arrorw-right" aria-hidden="true">
-        <svg class="svg-icon__link">
-          <use xlink:href="#arrorw-right"></use>
-        </svg>
-      </span>
-
-                    </span>
-
+                            <span class="svg-icon svg-icon--arrorw-right" aria-hidden="true">
+                                <svg class="svg-icon__link">
+                                    <use xlink:href="#arrorw-right"></use>
+                                </svg>
+                            </span>
+                        </span>
                     </div>
 
                     <div class="crumbs__item">
-
-                        <span href="contacts.html" class="crumbs__current">Контакты</span>
-
+                        <span href="/contacts" class="crumbs__current">Контакты</span>
                     </div>
 
                 </div>
