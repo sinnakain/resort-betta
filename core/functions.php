@@ -82,6 +82,8 @@ function get_URL_page_params()
         $apart_id = substr($raw_page, strrpos($raw_page, '/') + 1, strlen($raw_page));
         return [ 0 => $apart_id];
     }
+
+    return Array();
 }
 
 function get_page_raw()

@@ -1,6 +1,27 @@
 <?
-// FIXME for debug
-print_r(get_URL_page_params())
+require 'core/apartments.php';
+
+$url_params = get_URL_page_params();
+$apart_id = isset($url_params[0]) ? $url_params[0] : 0;
+
+$apartment = get_apartment_by_id($apart_id);
+
+$title =        $apartment['title'];
+$min_persons =  $apartment['min_persons'];
+$max_persons =  $apartment['max_persons'];
+$price =        $apartment['price'];
+$description =  $apartment['description'];
+$facilities =   $apartment['facilities'];
+$price_matrix = $apartment['price_matrix'];
+
+$rooms_count =  $apartment['rooms_count'];
+$kitchen =      $apartment['kitchen'];
+$bathroom =     $apartment['bathroom'];
+$furniture =    $apartment['furniture'];
+$floor =        $apartment['floor'];
+
+
+$card_link = '/reservation/apartment/' . $apart_id;
 ?>
 
 
@@ -10,7 +31,7 @@ print_r(get_URL_page_params())
     <div class="hero__content">
         <div class="hero__text">
 
-            <h1 class="hero__header h1">Двухместный номер с балконом</h1>
+            <h1 class="hero__header h1"><?=$title?></h1>
 
 
             <nav class="crumbs">
@@ -39,7 +60,7 @@ print_r(get_URL_page_params())
                     </div>
 
                     <div class="crumbs__item">
-                        <span class="crumbs__current">Двухместный номер с балконом</span>
+                        <span class="crumbs__current"><?=$title?></span>
                     </div>
 
                 </div>
@@ -55,20 +76,17 @@ print_r(get_URL_page_params())
         <div class="card__content">
             <div class="card__head">
                 <div class="card__title">
-                    <div class="card__title-text">Двухместный номер с <br>балконом</div>
-
+                    <div class="card__title-text"><?= $title ?></div>
 
                     <div class="apartment-places card__places">
                         <div class="apartment-places__icon">
-
                             <div class="svg-icon svg-icon--counter-icon" aria-hidden="true">
                                 <svg class="svg-icon__link">
                                     <use xlink:href="#counter-icon"></use>
                                 </svg>
                             </div>
-
                         </div>
-                        <div class="apartment-places__count">1-2</div>
+                        <div class="apartment-places__count"><?= $min_persons . '-' . $max_persons ?></div>
                     </div>
                 </div>
 
@@ -118,34 +136,30 @@ print_r(get_URL_page_params())
                 <div class="card__right">
                     <!-- noindex -->
                     <div class="card__title">
-                        <div class="card__title-text">Двухместный номер с <br>балконом</div>
-
+                        <div class="card__title-text"><?= $title ?></div>
 
                         <div class="apartment-places card__places">
                             <div class="apartment-places__icon">
-
                                 <div class="svg-icon svg-icon--counter-icon" aria-hidden="true">
                                     <svg class="svg-icon__link">
                                         <use xlink:href="#counter-icon"></use>
                                     </svg>
                                 </div>
-
                             </div>
-                            <div class="apartment-places__count">1-2</div>
+
+                            <div class="apartment-places__count"><?= $min_persons . '-' . $max_persons ?></div>
                         </div>
                     </div>
                     <!-- /noindex -->
 
                     <div class="card__data">
                         <div class="card__adds">
-
                             <div class="svg-icon svg-icon--check svg-icon--colored" aria-hidden="true">
                                 <svg class="svg-icon__link">
                                     <use xlink:href="#check"></use>
                                 </svg>
                             </div>
-
-                            Бесплатная автостоянка, Wi-Fi, спутниковое TV, xолодильник, душ, кондиционер, кухня, сейф
+                            <?= $facilities ?>
                         </div>
 
                         <div class="card__table">
@@ -157,22 +171,12 @@ print_r(get_URL_page_params())
                             </div>
 
                             <div class="card__table-body">
-                                <div class="card__table-row">
-                                    <div class="card__table-col"><span>Июнь</span></div>
-                                    <div class="card__table-col"><span>1500 Р / сутки</span></div>
-                                </div>
-                                <div class="card__table-row">
-                                    <div class="card__table-col"><span>Июль</span></div>
-                                    <div class="card__table-col"><span>2000 Р / сутки</span></div>
-                                </div>
-                                <div class="card__table-row">
-                                    <div class="card__table-col"><span>Август</span></div>
-                                    <div class="card__table-col"><span>2000 Р / сутки</span></div>
-                                </div>
-                                <div class="card__table-row">
-                                    <div class="card__table-col"><span>Сентябрь</span></div>
-                                    <div class="card__table-col"><span>1500 Р / сутки</span></div>
-                                </div>
+                                <? foreach ($price_matrix as $month => $price) { ?>
+                                    <div class="card__table-row">
+                                        <div class="card__table-col"><span><?=$month?></span></div>
+                                        <div class="card__table-col"><span><?=$price?> Р / сутки</span></div>
+                                    </div>
+                                <? } ?>
                             </div>
                         </div>
                     </div>
@@ -257,7 +261,9 @@ print_r(get_URL_page_params())
                             <div class="form__note">
                                 Нажимая на кнопку, вы даете согласие на обработку своих <br>персональных данных и
                                 соглашаетесь с
-                                <a href="#" target="_blank">политикой <br>конфиденциальности</a>
+
+                                <!-- todo add pop-up policy -->
+                                <a href="#">политикой <br>конфиденциальности</a>
                             </div>
                         </form><!-- form -->
 
@@ -319,33 +325,24 @@ print_r(get_URL_page_params())
                         <div class="card__text">
                             <div class="card__text-header">Описание:</div>
                             <div class="card__text-body">
-                                <p>Номер представляет собой небольшую студию-квартиру. В номере есть небольшая кухня с
-                                    холодильником, электроплитой и необходимым набором посуды. Санузлы в номерах – с
-                                    душевыми
-                                    кабинами. Имеется спутниковое ТВ, кондиционер, Wi-Fi, сейф, утюг, гладильная доска,
-                                    сушилка.</p>
-                                <p>Веранды в двухкомнатных номерах позволят уютно расположиться всей семье на трапезу.
-                                    Шашлык же
-                                    для этой трапезы легко приготовить на мангале в беседках возле гостиниц.</p>
+                                <?= $description ?>
                             </div>
                         </div>
                         <div class="card__meta">
                             <div class="card__meta-item">
-                                <strong>Комнат:</strong> 2
+                                <strong>Комнат:</strong> <?= $rooms_count ?>
                             </div>
                             <div class="card__meta-item">
-                                <strong>Кухня:</strong> в номере
+                                <strong>Кухня:</strong> <?= $kitchen ?>
                             </div>
                             <div class="card__meta-item">
-                                <strong>Санузел:</strong> в номере
+                                <strong>Санузел:</strong> <?= $bathroom ?>
                             </div>
                             <div class="card__meta-item">
-                                <strong>Мебель:</strong> двуспальная кровать, кресло-кровать, шкаф, прикроватные
-                                тумбочки, стулья,
-                                стол
+                                <strong>Мебель:</strong> <?= $furniture ?>
                             </div>
                             <div class="card__meta-item">
-                                <strong>Этаж:</strong> 2
+                                <strong>Этаж:</strong> <?= $floor ?>
                             </div>
                         </div>
 
@@ -364,10 +361,10 @@ print_r(get_URL_page_params())
 
                                         <div class="contacts__item-text">
                                             <div class="contacts__item-link">
-                                                <a href="tel:">8 (960) 489 60 93 (Наталья)</a>
+                                                <a href="tel:"><?= config('phone_main') ?></a>
                                             </div>
                                             <div class="contacts__item-link">
-                                                <a href="tel:">8 (988) 954 20 97</a>
+                                                <a href="tel:"><?= config('phone_irina') ?></a>
                                             </div>
                                         </div>
                                     </div>
@@ -385,7 +382,7 @@ print_r(get_URL_page_params())
 
                                         <div class="contacts__item-text">
                                             <div class="contacts__item-link">
-                                                <a href="mailto:admin@resort-betta.ru">admin@resort-betta.ru</a>
+                                                <a href="mailto:<?= config('contact_email') ?>"><?= config('contact_email') ?></a>
                                             </div>
                                         </div>
                                     </div>
@@ -399,10 +396,10 @@ print_r(get_URL_page_params())
                                             </svg>
                                         </div>
 
-
+                                        <!-- FIXME replace skype to whatsapp -->
                                         <div class="contacts__item-text">
                                             <div class="contacts__item-link">
-                                                <a href="skype:admin@resort-betta.ru">n.vakary</a>
+                                                <a href="skype:admin@resort-betta.ru"><?= config('contact_skype') ?></a>
                                             </div>
                                         </div>
                                     </div>

@@ -24,15 +24,12 @@ function render_apartments_list()
                 <div class="apartment__images">
                     <div class="apartment-places apartment__places apartment__places--desktop">
                         <div class="apartment-places__icon">
-
                             <div class="svg-icon svg-icon--counter-icon" aria-hidden="true">
                                 <svg class="svg-icon__link">
                                     <use xlink:href="#counter-icon"></use>
                                 </svg>
                             </div>
-
                         </div>
-                        <div class="apartment-places__count">1-2</div>
                     </div>
                     <div class="apartment__images-counter">
                         <span class="apartment__images-counter-current js-apartment-current-slide">1</span>
