@@ -15,13 +15,15 @@ function render_apartments_list()
         $price = $apartment['price'];
         $description = $apartment['facilities']; // todo may be "description-short"
 
-        $card_link = '/reservation/apartment/' . $id;
+        $apart_images = get_apartment_images($id);
+        $img_count = $apart_images ? sizeof($apart_images) : 0;
 
+        $card_link = '/reservation/apartment/' . $id;
         ?>
         <div class="apartments__item">
             <div class="apartment apartment--reservation js-apartment">
 
-                <div class="apartment__images">
+                <div class="apartment__images" <?= $img_count > 0 ? '' : 'hidden' ?>>
                     <div class="apartment-places apartment__places apartment__places--desktop">
                         <div class="apartment-places__icon">
                             <div class="svg-icon svg-icon--counter-icon" aria-hidden="true">
@@ -32,57 +34,25 @@ function render_apartments_list()
                         </div>
                     </div>
                     <div class="apartment__images-counter">
-                        <span class="apartment__images-counter-current js-apartment-current-slide">1</span>
+                        <span class="apartment__images-counter-current js-apartment-current-slide"><?= $img_count > 0 ? 1 : 0 ?></span>
                         <span class="apartment__images-counter-sep">из</span>
-                        <span class="apartment__images-counter-all">5</span>
+                        <span class="apartment__images-counter-all"><?= $img_count ?></span>
                     </div>
                     <div class="apartment__images-gallery js-apartment-images">
 
-                        <picture class="apartment__image">
-                            <source srcset="img/apartment-image@960.png" media="(max-width: 979px)" type="image/png">
-
-                            <source srcset="img/apartment-image-resevation.png" media="(min-width: 980px)"
-                                    type="image/png">
-                            <img src="img/apartment-image-resevation.png" alt="">
-
-                        </picture>
-
-                        <picture class="apartment__image">
-                            <source srcset="img/apartment-image@960.png" media="(max-width: 979px)" type="image/png">
-
-                            <source srcset="img/apartment-image-resevation.png" media="(min-width: 980px)"
-                                    type="image/png">
-                            <img src="img/apartment-image-resevation.png" alt="">
-
-                        </picture>
-
-                        <picture class="apartment__image">
-                            <source srcset="img/apartment-image@960.png" media="(max-width: 979px)" type="image/png">
-
-                            <source srcset="img/apartment-image-resevation.png" media="(min-width: 980px)"
-                                    type="image/png">
-                            <img src="img/apartment-image-resevation.png" alt="">
-
-                        </picture>
-
-                        <picture class="apartment__image">
-                            <source srcset="img/apartment-image@960.png" media="(max-width: 979px)" type="image/png">
-
-                            <source srcset="img/apartment-image-resevation.png" media="(min-width: 980px)"
-                                    type="image/png">
-                            <img src="img/apartment-image-resevation.png" alt="">
-
-                        </picture>
-
-                        <picture class="apartment__image">
-                            <source srcset="img/apartment-image@960.png" media="(max-width: 979px)" type="image/png">
-
-                            <source srcset="img/apartment-image-resevation.png" media="(min-width: 980px)"
-                                    type="image/png">
-                            <img src="img/apartment-image-resevation.png" alt="">
-
-                        </picture>
-
+                        <?
+                        if($img_count > 0) {
+                            foreach ($apart_images as $k => $image) {
+                                ?>
+                                <picture class="apartment__image">
+                                    <source srcset="<?= $image ?>" media="(max-width: 979px)" type="image/png">
+                                    <source srcset="<?= $image ?>" media="(min-width: 980px)" type="image/png">
+                                    <img src="<?= $image ?>" alt="">
+                                </picture>
+                                <?
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
 

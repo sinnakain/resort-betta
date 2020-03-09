@@ -20,6 +20,8 @@ $bathroom =     $apartment['bathroom'];
 $furniture =    $apartment['furniture'];
 $floor =        $apartment['floor'];
 
+$apart_images = get_apartment_images($apart_id);
+$img_count = $apart_images ? sizeof($apart_images) : 0;
 
 $card_link = '/reservation/apartment/' . $apart_id;
 ?>
@@ -90,33 +92,7 @@ $card_link = '/reservation/apartment/' . $apart_id;
                     </div>
                 </div>
 
-
-                <? // photo gallery
-                $relative_dir = '/img/apartments/apartment_' . $apart_id;
-                $image_dir = getcwd() . $relative_dir;
-
-                // scandir
-                $images = false;
-                if(is_dir($image_dir)) {
-                    $images = scandir($image_dir);
-
-                    // remove non-image files
-                    if($images) {
-                        foreach ($images as $k => $image) {
-                            if (
-                                   !strripos($image, 'jpeg')
-                                && !strripos($image, 'jpg')
-                                && !strripos($image, 'png')
-                            ) {
-                                unset($images[$k]);
-                            }
-                        }
-                    }
-                }
-
-                $img_count = $images ? sizeof($images) : 0;
-                ?>
-                <div class="card__images js-card-images" <?= $images ? '' : 'hidden' ?>>
+                <div class="card__images js-card-images" <?= $img_count > 0 ? '' : 'hidden' ?>>
                     <div class="card__images-counter">
                         <span class="card__images-counter-current js-card-current-slide"><?= $img_count > 0 ? 1 : 0 ?></span>
                         <span class="card__images-counter-sep">из</span>
@@ -126,14 +102,12 @@ $card_link = '/reservation/apartment/' . $apart_id;
 
                         <?
                         if($img_count > 0) {
-                            foreach ($images as $k => $image) {
-                                $image_href = $relative_dir . '/' . $image;
-                                // TODO add mobile image
+                            foreach ($apart_images as $k => $image) {
                                 ?>
                                 <picture class="card__image">
-                                    <source srcset="<?= $image_href ?>" media="(max-width: 979px)" type="image/png">
-                                    <source srcset="<?= $image_href ?>" media="(min-width: 980px)" type="image/png">
-                                    <img       src="<?= $image_href ?>" alt="">
+                                    <source srcset="<?= $image ?>" media="(max-width: 979px)" type="image/png">
+                                    <source srcset="<?= $image ?>" media="(min-width: 980px)" type="image/png">
+                                    <img       src="<?= $image ?>" alt="">
                                 </picture>
                                 <?
                             }

@@ -112,7 +112,37 @@ function get_apartments_by_persons($count = 0)
     return $result;
 }
 
-// fixme test by 404 and null values
-function get_apartment_by_id($id = 0) {
-    return get_apartments()[$id];
+function get_apartment_by_id($apartment_id = 0)
+{
+    return get_apartments()[$apartment_id];
+}
+
+function get_apartment_images($apartment_id = 0)
+{
+    $relative_dir = '/img/apartments/apartment_' . $apartment_id;
+    $image_dir = getcwd() . $relative_dir;
+
+    if(is_dir($image_dir)) {
+        $images = scandir($image_dir);
+
+        if($images) {
+            foreach ($images as $k => $image) {
+                if (
+                       strripos($image, 'jpeg')
+                    || strripos($image, 'jpg')
+                    || strripos($image, 'png')
+                )
+                {
+                    $images[$k] = $relative_dir . '/' . $image;
+                } else {
+                    // remove non-image files
+                    unset($images[$k]);
+                }
+            }
+
+            return $images;
+        }
+
+        return Array();
+    }
 }

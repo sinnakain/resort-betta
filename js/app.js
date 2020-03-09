@@ -141,6 +141,9 @@ $(function () {
       var $this = $(elem);
       var className = apartmentImages.replace('.', '') + '--i' + apartmentCounter;
       var $current = $this.closest('.js-apartment').find('.js-apartment-current-slide');
+
+      if(!$this || $this.children().length === 0) return;
+
       $this.addClass(className);
       var drag = false;
 
