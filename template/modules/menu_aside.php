@@ -20,9 +20,10 @@
                     <ul class="aside-nav__menu-list">
 
                         <?
+                        $current_page = get_current_page();
+
                         foreach (config('nav_menu') as $path => $display_name) {
-                            $is_current_page = get_current_page() === $path
-                                || (get_current_page() === 'home' && $path === '');
+                            $is_current_page = $current_page === $path || ($current_page === 'home' && $path === '');
 
                             $class_attr = $is_current_page ? ' class="is-active"' : '';
 

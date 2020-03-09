@@ -6,6 +6,7 @@
 
         $left_count = intdiv($menu_size, 2) + $menu_size % 2;
 
+        $current_page = get_current_page();
 
         $counter = 0;
         foreach ($menu_items as $path => $display_name) {
@@ -23,8 +24,7 @@
 
             }
 
-            $is_current_page = get_current_page() === $path
-                || (get_current_page() === 'home' && $path === '');
+            $is_current_page = $current_page === $path || ($current_page === 'home' && $path === '');
 
             $class_attr = $is_current_page ? ' class="is-active"' : '';
 
