@@ -253,6 +253,8 @@ $(function () {
 
     var sliderFn = function sliderFn(index, elem) {
       var $this = $(elem);
+      if(!$this || $this.children().length === 0) return;
+
       var className = cardImages.replace('.', '') + '--i' + index;
       var $current = $this.closest('.js-card-images').find('.js-card-current-slide');
       $this.addClass(className);

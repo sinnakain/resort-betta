@@ -99,7 +99,6 @@ $card_link = '/reservation/apartment/' . $apart_id;
                         <span class="card__images-counter-all"><?= $img_count ?></span>
                     </div>
                     <div class="card__images-gallery js-card-images-gallery">
-
                         <?
                         if($img_count > 0) {
                             foreach ($apart_images as $k => $image) {
@@ -265,44 +264,26 @@ $card_link = '/reservation/apartment/' . $apart_id;
 
                 <div class="card__left">
                     <!-- noindex -->
-                    <div class="card__images js-card-images">
+                    <div class="card__images js-card-images" <?= $img_count > 0 ? '' : 'hidden' ?>>
                         <div class="card__images-counter">
-                            <span class="card__images-counter-current js-card-current-slide">1</span>
+                            <span class="card__images-counter-current js-card-current-slide"><?= $img_count > 0 ? 1 : 0 ?></span>
                             <span class="card__images-counter-sep">из</span>
-                            <span class="card__images-counter-all">5</span>
+                            <span class="card__images-counter-all"><?= $img_count ?></span>
                         </div>
                         <div class="card__images-gallery js-card-images-gallery">
-
-                            <picture class="card__image">
-                                <source srcset="/img/card-pic-mobile.png" media="(max-width: 979px)" type="image/png">
-                                <source srcset="/img/card-pic-desktop.png" media="(min-width: 980px)" type="image/png">
-                                <img src="/img/card-pic-desktop.png" alt="">
-                            </picture>
-
-                            <picture class="card__image">
-                                <source srcset="/img/card-pic-mobile.png" media="(max-width: 979px)" type="image/png">
-                                <source srcset="/img/card-pic-desktop.png" media="(min-width: 980px)" type="image/png">
-                                <img src="/img/card-pic-desktop.png" alt="">
-                            </picture>
-
-                            <picture class="card__image">
-                                <source srcset="/img/card-pic-mobile.png" media="(max-width: 979px)" type="image/png">
-                                <source srcset="/img/card-pic-desktop.png" media="(min-width: 980px)" type="image/png">
-                                <img src="/img/card-pic-desktop.png" alt="">
-                            </picture>
-
-                            <picture class="card__image">
-                                <source srcset="/img/card-pic-mobile.png" media="(max-width: 979px)" type="image/png">
-                                <source srcset="/img/card-pic-desktop.png" media="(min-width: 980px)" type="image/png">
-                                <img src="/img/card-pic-desktop.png" alt="">
-                            </picture>
-
-                            <picture class="card__image">
-                                <source srcset="/img/card-pic-mobile.png" media="(max-width: 979px)" type="image/png">
-                                <source srcset="/img/card-pic-desktop.png" media="(min-width: 980px)" type="image/png">
-                                <img src="/img/card-pic-desktop.png" alt="">
-                            </picture>
-
+                            <?
+                            if($img_count > 0) { // fixme dublicate code?
+                                foreach ($apart_images as $k => $image) {
+                                    ?>
+                                    <picture class="card__image">
+                                        <source srcset="<?= $image ?>" media="(max-width: 979px)" type="image/png">
+                                        <source srcset="<?= $image ?>" media="(min-width: 980px)" type="image/png">
+                                        <img       src="<?= $image ?>" alt="">
+                                    </picture>
+                                    <?
+                                }
+                            }
+                            ?>
                         </div>
                     </div>
                     <!-- /noindex -->
