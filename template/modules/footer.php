@@ -1,4 +1,4 @@
-`<footer class="app-footer">
+<footer class="app-footer">
     <div class="app-footer__container container">
         <div class="app-footer__nav">
             <ul>

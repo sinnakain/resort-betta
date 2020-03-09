@@ -37,7 +37,10 @@ function page_title()
 function page_content()
 {
     $content_file = get_page_path() . '/content.phtml';
-    echo file_get_contents($content_file);
+
+    if (file_exists($content_file)) {
+        require $content_file;
+    }
 }
 
 function page_modules() {
@@ -87,6 +90,19 @@ function get_page_path()
 function get_current_page()
 {
     return isset($_GET['page']) ? $_GET['page'] : 'home';
+}
+
+function get_query_params() {
+    if(isset($_SERVER['REQUEST_URI'])) {
+        $parts = parse_url($_SERVER['REQUEST_URI']);
+
+        if(isset($parts['query'])) {
+            parse_str($parts['query'], $query);
+            return $query;
+        }
+    }
+
+    return Array();
 }
 
 /**

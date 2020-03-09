@@ -15,10 +15,6 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-function _showElement(element) {
-  element.removeAttribute('hidden');
-}
-
 var getUrlParameter = function getUrlParameter(sParam) {
   var sPageURL = window.location.search.substring(1),
     sURLVariables = sPageURL.split('&'),
@@ -308,34 +304,8 @@ $(function () {
   /* ^^^ Increase number counters on viewing
    * ========================================================================== */
 
-  var apartmentItems = $('.apartments__item');
   var personsURL = Number.parseInt(getUrlParameter('persons'));
   var isValidPersonURL = personsURL && personsURL >= 0 && personsURL < 100;
-
-  /**
-   * Filter apartments by persons count
-   */
-  function doFilterApartments() {
-    apartmentItems.each(function(i, item) {
-      if(isValidPersonURL) {
-        var item_count_raw = (item.getAttribute('data-persons-count') || "").split('-');
-        var minPersons = Number.parseInt(item_count_raw[0]),
-          maxPersons = Number.parseInt(item_count_raw[1]);
-
-        var correctSpace = minPersons && maxPersons && maxPersons >= minPersons;
-        if(correctSpace && minPersons <= personsURL && personsURL <= maxPersons) {
-          _showElement(item);
-        }
-      } else {
-        _showElement(item);
-      }
-    });
-  }
-
-  if(apartmentItems.length > 0) {
-    doFilterApartments();
-  }
-
 
   var inputSpinner = '.js-ipnut-spinner';
 
