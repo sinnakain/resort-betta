@@ -56,8 +56,39 @@ function get_page_path()
 
 function get_current_page()
 {
+    $raw_page = get_page_raw();
+
+    // FIXME HARDCODE
+    // FIXME remove to route config!
+    $apart_ex = '/reservation\/apartment\/\\d+/';
+    if(preg_match($apart_ex, $raw_page)) {
+        // remove apartment ID
+        $apart_path = substr($raw_page, 0, strrpos($raw_page, '/'));
+        return $apart_path;
+    }
+
+    return $raw_page;
+}
+
+function get_URL_page_params()
+{
+    $raw_page = get_page_raw();
+
+    // FIXME HARDCODE
+    // FIXME remove to route config!
+    $apart_ex = '/reservation\/apartment\/\\d+/';
+    if(preg_match($apart_ex, $raw_page)) {
+        // get apartment ID
+        $apart_id = substr($raw_page, strrpos($raw_page, '/') + 1, strlen($raw_page));
+        return [ 0 => $apart_id];
+    }
+}
+
+function get_page_raw()
+{
     return isset($_GET['page']) ? $_GET['page'] : 'home';
 }
+
 
 function get_query_params() {
     if(isset($_SERVER['REQUEST_URI'])) {

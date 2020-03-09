@@ -31,7 +31,7 @@
         </div>
 
         <a href="index.html" class="app-logo app-footer__logo">
-            <img src="img/app-logo.svg" alt="">
+            <img src="/img/app-logo.svg" alt="">
         </a>
 
         <div class="app-footer__phones">

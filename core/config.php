@@ -50,6 +50,10 @@ function config($key = '')
             ],
             'contacts' => [
                 'body_classname' => 'app--contacts',
+            ],
+            'reservation/apartment' => [
+                'body_classname' => 'app--card',
+                'modules' => ['reviews']
             ]
         ],
 
