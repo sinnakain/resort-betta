@@ -445,6 +445,26 @@ $(function () {
     event.preventDefault();
     $('.js-form').addClass('is-hidden');
     $('.js-form-thanks').fadeIn();
+
+
+
+
+    // FIXME
+  var name = $("#form_name").val();
+  var infdata = $("#form_infdata").val();
+  var phone = $("#form_phone").val();
+  var persons = $("#form_persons").val();
+  var message = $("#form_message").val();
+  $.ajax({
+      type: "POST",
+      url: "/services/telegram.php",
+      data: {name: name, infdata: infdata, phone: phone, persons: persons, message: message}
+  }).done(function (msg) {
+      $('.js-form').addClass('is-hidden');
+      $('.js-form-thanks').fadeIn();
+  });
+
+
   });
   var dateInput = document.querySelector('.js-date');
 

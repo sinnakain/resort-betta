@@ -179,15 +179,14 @@ $card_link = '/reservation/apartment/' . $apart_id;
 
                             <div class="form__items">
                                 <div class="form__item">
-                                    <input required="" name="name" placeholder="Имя" type="text"
-                                           class="input form__input">
+                                    <input required="" id="form_name" name="name" placeholder="Имя" type="text" class="input form__input">
                                 </div>
                                 <div class="form__item">
-                                    <input required="" name="infdata" class="input form__input js-date"
+                                    <input required="" id="form_infdata" class="input form__input js-date"
                                            placeholder="Дата (Д.М - Д.М)" type="text">
                                 </div>
                                 <div class="form__item">
-                                    <input required="" name="phone" placeholder="Телефон или e-mail" type="text"
+                                    <input required="" id="form_phone" placeholder="Телефон или e-mail" type="text"
                                            class="input form__input">
                                 </div>
                                 <div class="form__item">
@@ -210,20 +209,16 @@ $card_link = '/reservation/apartment/' . $apart_id;
                                             </div>
                                             <div class="counter__reservation">
                                                 <div class="counter__selected"></div>
-                                                <button type="button" class="counter__change js-counter-change">
-                                                    Изменить
-                                                </button>
+                                                <button type="button" class="counter__change js-counter-change">Изменить</button>
                                             </div>
                                             <div class="counter__controls">
                                                 <button type="button"
                                                         class="counter__button counter__button--minus js-input-spinner-minus">
                                                     <span class="counter__button-text">-</span>
                                                 </button>
-                                                <input value="" required="" data-maxlength="2" type="number"
-                                                       name="persons"
+                                                <input value="" id="form_persons" required="" data-maxlength="2" type="number"
                                                        class="counter__input js-input-spinner-counter">
-                                                <button type="button"
-                                                        class="counter__button counter__button--plus js-input-spinner-plus">
+                                                <button type="button" class="counter__button counter__button--plus js-input-spinner-plus">
                                                     <span class="counter__button-text">+</span>
                                                 </button>
                                             </div>
@@ -231,8 +226,7 @@ $card_link = '/reservation/apartment/' . $apart_id;
                                     </div><!-- counter -->
                                 </div>
                                 <div class="form__item">
-                                    <textarea name="message" placeholder="Комментарий"
-                                              class="textarea form__textarea"></textarea>
+                                    <textarea id="form_message" placeholder="Комментарий" class="textarea form__textarea"></textarea>
                                 </div>
                             </div>
 
