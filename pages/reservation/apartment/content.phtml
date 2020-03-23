@@ -24,6 +24,14 @@ $apart_images = get_apartment_images($apart_id);
 $img_count = $apart_images ? sizeof($apart_images) : 0;
 
 $card_link = '/reservation/apartment/' . $apart_id;
+
+
+if(is_bool($kitchen)) {
+    $kitchen = $kitchen ? "в номере" : "нет";
+}
+if(is_bool($bathroom)) {
+    $bathroom = $bathroom ? "в номере" : "нет";
+}
 ?>
 
 

@@ -13,7 +13,12 @@ function render_apartments_list()
         $min_persons = $apartment['min_persons'];
         $max_persons = $apartment['max_persons'];
         $price = $apartment['price'];
-        $description = $apartment['facilities']; // todo may be "description-short"
+
+        $description = $apartment['description-short'];
+        $facilities = $apartment['facilities'];
+        if(!$description) {
+            $description = $facilities;
+        }
 
         $apart_images = get_apartment_images($id);
         $img_count = $apart_images ? sizeof($apart_images) : 0;
