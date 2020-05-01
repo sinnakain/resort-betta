@@ -2095,7 +2095,7 @@ html {
   margin-top: -2px;
 }
 
-.contacts__item-content .svg-icon--skype {
+.contacts__item-content .svg-icon--whatsapp {
   width: 24px;
   height: 24px;
   margin-right: 21px;
@@ -3795,6 +3795,7 @@ html {
 
   .app-footer__phones {
     margin-bottom: 20px;
+      width: 500px;
   }
 
   .app-footer__phone-items {
@@ -3803,10 +3804,10 @@ html {
   }
 
   .app-footer__phone {
-    width: 50%;
-    max-width: 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
+    width: 33%;
+    max-width: 33%;
+    -ms-flex: 0 0 33%;
+    flex: 0 0 33%;
     margin-bottom: 0;
   }
 
@@ -4707,17 +4708,19 @@ html {
     display: flex;
     padding-top: 0;
     padding-bottom: 5px;
+    margin-top: 80px;
+    margin-bottom: 60px;
   }
 
   .contacts__content {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-left: 10px;
     width: 50%;
     max-width: 50%;
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     margin-bottom: 0;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
   }
 
   .contacts__image {
@@ -4891,8 +4894,8 @@ html {
   }
 
   .how-to-get__container {
-    padding-bottom: 80px;
-    padding-top: 80px;
+    padding-bottom: 70px;
+    padding-top: 60px;
   }
 
   .how-to-get__content {

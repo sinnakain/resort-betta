@@ -328,12 +328,7 @@ if(is_bool($bathroom)) {
 
 
                                         <div class="contacts__item-text">
-                                            <div class="contacts__item-link">
-                                                <a href="tel:"><?= config('phone_main') ?></a>
-                                            </div>
-                                            <div class="contacts__item-link">
-                                                <a href="tel:"><?= config('phone_irina') ?></a>
-                                            </div>
+                                            <?php render_phones(); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -358,16 +353,17 @@ if(is_bool($bathroom)) {
                                 <div class="contacts__item">
                                     <div class="contacts__item-content">
 
-                                        <div class="svg-icon svg-icon--skype" aria-hidden="true">
+                                        <div class="svg-icon svg-icon--whatsapp" aria-hidden="true">
                                             <svg class="svg-icon__link">
-                                                <use xlink:href="#skype"></use>
+                                                <use xlink:href="#whatsapp"></use>
                                             </svg>
                                         </div>
 
-                                        <!-- FIXME replace skype to whatsapp -->
                                         <div class="contacts__item-text">
                                             <div class="contacts__item-link">
-                                                <a href="skype:admin@resort-betta.ru"><?= config('contact_skype') ?></a>
+                                                <a href="<?= config('social_whatsapp_link'); ?>">
+                                                    <?= config('display_phones')['phone_main']; ?>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

@@ -45,15 +45,9 @@
 
             </div>
             <div class="app-footer__phone-items">
-                <div class="app-footer__phone">
-                    <a href="tel:+79889542097">+7 (988) 954-20-97</a>
-                </div>
-                <div class="app-footer__phone">
-                    <a href="tel:+79604896093">+7 (918) 467-18-44</a>
-                </div>
-                <div class="app-footer__phone" hidden>
-                    <a href="tel:+79604896093">+7 (960) 489-60-93</a>
-                </div>
+                <?php
+                    render_phones('app-footer__phone');
+                ?>
             </div>
         </div>
 

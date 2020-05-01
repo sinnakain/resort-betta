@@ -24,14 +24,16 @@ function config($key = '')
 
         'social_vk_link' => 'https://vk.com/resort_betta',
         'social_insta_link' => 'https://instagram.com/resort_betta',
-        'social_whatsapp_link' => 'https://wa.me/79998141435',
+        'social_whatsapp_link' => 'https://wa.me/79604896093',
 
-        'phone_main' => '+7 (988) 954-20-97',
-        'phone_irina' => '+7 (918) 467-18-44',
-        'phone_second' => '+7 (960) 489-60-93',
+
+        'display_phones' => [
+            'phone_main' => '+7 (960) 489-60-93',
+            'phone_second' => '+7 (988) 954-20-97',
+            'phone_irina' => '+7 (918) 467-18-44'
+        ],
 
         'contact_email' => 'admin@resort-betta.ru',
-        'contact_skype' => 'n.vakary',
 
         'modules_path' => '/template/modules',
 

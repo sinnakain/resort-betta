@@ -51,9 +51,8 @@
                             </div>
 
 
-                            <div class="contacts__item-text">Краснодарский край, Геленджикский район, п. Бетта, ул.
-                                Садовая,
-                                д.4Б
+                            <div class="contacts__item-text">Краснодарский край, Геленджикский район,<br>
+                                п. Бетта, ул. Садовая, д.4Б
                             </div>
                         </div>
                     </div>
@@ -70,12 +69,7 @@
 
 
                             <div class="contacts__item-text">
-                                <div class="contacts__item-link">
-                                    <a href="tel:">8 (960) 489 60 93 (Наталья)</a>
-                                </div>
-                                <div class="contacts__item-link">
-                                    <a href="tel:">8 (988) 954 20 97</a>
-                                </div>
+                                <?php render_phones(); ?>
                             </div>
                         </div>
                     </div>
@@ -102,16 +96,18 @@
                     <div class="contacts__item">
                         <div class="contacts__item-content">
 
-                            <div class="svg-icon svg-icon--skype" aria-hidden="true">
+                            <div class="svg-icon svg-icon--whatsapp" aria-hidden="true">
                                 <svg class="svg-icon__link">
-                                    <use xlink:href="#skype"></use>
+                                    <use xlink:href="#whatsapp"></use>
                                 </svg>
                             </div>
 
 
                             <div class="contacts__item-text">
                                 <div class="contacts__item-link">
-                                    <a href="skype:admin@resort-betta.ru">n.vakary</a>
+                                    <a href="<?= config('social_whatsapp_link'); ?>">
+                                        <?= config('display_phones')['phone_main']; ?>
+                                    </a>
                                 </div>
                             </div>
                         </div>
