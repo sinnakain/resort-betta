@@ -24,9 +24,7 @@
 
     <? page_head(); ?>
 
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic-ext"
-        rel="stylesheet">
+    <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/plugins.min.css">
     <link rel="stylesheet" href="/css/app.css">
 
