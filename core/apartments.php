@@ -373,3 +373,7 @@ function get_apartment_images($apartment_id = 0)
         return Array();
     }
 }
+
+function get_see_also_items() {
+    return [4, 6, 7];
+}
