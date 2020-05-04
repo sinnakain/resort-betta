@@ -2124,8 +2124,8 @@ html {
 }
 
 .contacts--how-to-get .contacts__container {
-    padding-top: 50px;
-    padding-bottom: 75px;
+    margin-top: 50px;
+    padding-bottom: 55px;
     position: relative;
 }
 
@@ -2930,7 +2930,7 @@ html {
 }
 
 .hero--inside {
-    height: 376px;
+    height: 476px;
 }
 
 .hero--inside .hero__content {
@@ -4777,7 +4777,7 @@ html {
     }
 
     .contacts--how-to-get .contacts__item {
-        padding-left: 50px;
+        padding-left: 150px;
         width: 50%;
         max-width: 50%;
         -ms-flex: 0 0 50%;
@@ -4869,7 +4869,7 @@ html {
     }
 
     .hero--inside .hero__content {
-        top: 80px;
+        top: 110px;
     }
 
     .hero--inside .hero__text {

@@ -45,7 +45,7 @@ function config($key = '')
                 'modules' => ['reviews']
             ],
             'about-us' => [
-                'hero_image' => '/img/hero-pick-up-bg.png',
+                'hero_image' => '/img/hero/hero_apartments_main.jpg',
                 'body_classname' => 'app--about',
                 'modules' => ['reviews']
             ],
