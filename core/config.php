@@ -17,7 +17,7 @@ function config($key = '')
             'about-us' => 'О нас',
             'reservation' => 'Бронирование',
             'how-to-get' => 'Как добраться',
-            'resort-betta' => 'Курорт “Бетта”',
+            'resort-betta' => 'Для гостей',
             'contacts' => 'Контакты'
         ],
         'content_path' => 'pages',
