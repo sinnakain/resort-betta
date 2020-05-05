@@ -1,5 +1,6 @@
 <?php
-require 'core/apartments.php';
+require_once 'core/apartments.php';
+require_once 'core/tags.php';
 
 function render_apartments_list()
 {
@@ -14,11 +15,8 @@ function render_apartments_list()
         $max_persons = $apartment['max_persons'];
         $price = $apartment['price'];
 
-        $description = $apartment['description-short'];
-        $facilities = $apartment['facilities'];
-        if(!$description) {
-            $description = $facilities;
-        }
+        $facilities = $apartment['facilities']; // fixme change to tags
+        $tags = $apartment['tags'];
 
         $apart_images = get_apartment_images($id);
         $img_count = $apart_images ? sizeof($apart_images) : 0;
@@ -88,7 +86,11 @@ function render_apartments_list()
                                         <use xlink:href="#check"></use>
                                     </svg>
                                 </div>
-                                <?= $description ?>
+                                <?
+                                foreach ($tags as $k => $tag) {
+                                    render_tag($tag);
+                                }
+                                ?>
                             </div>
                             <div class="apartment__columns">
                                 <div class="apartment__column apartment__column--more">
