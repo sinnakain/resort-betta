@@ -37,14 +37,15 @@ function render_apartments_list()
                         </div>
                     </div>
                     <div class="apartment__images-counter">
-                        <span class="apartment__images-counter-current js-apartment-current-slide"><?= $img_count > 0 ? 1 : 0 ?></span>
+                        <span
+                            class="apartment__images-counter-current js-apartment-current-slide"><?= $img_count > 0 ? 1 : 0 ?></span>
                         <span class="apartment__images-counter-sep">из</span>
                         <span class="apartment__images-counter-all"><?= $img_count ?></span>
                     </div>
                     <div class="apartment__images-gallery js-apartment-images">
 
                         <?
-                        if($img_count > 0) {
+                        if ($img_count > 0) {
                             foreach ($apart_images as $k => $image) {
                                 ?>
                                 <picture class="apartment__image">
@@ -80,17 +81,7 @@ function render_apartments_list()
                     <div class="apartment__body-hidden">
                         <div class="apartment__body-limit">
                             <div class="apartment__adds">
-
-                                <div class="svg-icon svg-icon--check svg-icon--colored" aria-hidden="true">
-                                    <svg class="svg-icon__link">
-                                        <use xlink:href="#check"></use>
-                                    </svg>
-                                </div>
-                                <?
-                                foreach ($tags as $k => $tag) {
-                                    render_tag($tag);
-                                }
-                                ?>
+                                <? render_tags($tags); ?>
                             </div>
                             <div class="apartment__columns">
                                 <div class="apartment__column apartment__column--more">

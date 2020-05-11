@@ -1,5 +1,6 @@
 <?
-require 'core/apartments.php';
+require_once 'core/apartments.php';
+require_once 'core/tags.php';
 
 $url_params = get_URL_page_params();
 $apart_id = isset($url_params[0]) ? $url_params[0] : 0;
@@ -11,7 +12,10 @@ $min_persons =  $apartment['min_persons'];
 $max_persons =  $apartment['max_persons'];
 $price =        $apartment['price'];
 $description =  $apartment['description'];
+
 $facilities =   $apartment['facilities'];
+$tags = $apartment['tags'];
+
 $price_matrix = $apartment['price_matrix'];
 
 $rooms_count =  $apartment['rooms_count'];
@@ -146,12 +150,7 @@ if(is_bool($bathroom)) {
 
                     <div class="card__data">
                         <div class="card__adds">
-                            <div class="svg-icon svg-icon--check svg-icon--colored" aria-hidden="true">
-                                <svg class="svg-icon__link">
-                                    <use xlink:href="#check"></use>
-                                </svg>
-                            </div>
-                            <?= $facilities ?>
+                            <? render_tags($tags) ?>
                         </div>
 
                         <div class="card__table">

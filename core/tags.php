@@ -40,4 +40,16 @@ function render_tag($tag_id)
     </div>
     <?
 }
+
+function render_tags($tag_ids, $wrap_items = true)
+{
+    echo $wrap_items ? '<div class="tags__container">' : '';
+
+    foreach($tag_ids as $k => $tag_id) {
+        render_tag($tag_id);
+    }
+
+    echo $wrap_items ? '</div>' : '';
+}
+
 ?>
