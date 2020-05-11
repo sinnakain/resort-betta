@@ -7,22 +7,22 @@ $apart_id = isset($url_params[0]) ? $url_params[0] : 0;
 
 $apartment = get_apartment_by_id($apart_id);
 
-$title =        $apartment['title'];
-$min_persons =  $apartment['min_persons'];
-$max_persons =  $apartment['max_persons'];
-$price =        $apartment['price'];
-$description =  $apartment['description'];
+$title = $apartment['title'];
+$min_persons = $apartment['min_persons'];
+$max_persons = $apartment['max_persons'];
+$price = $apartment['price'];
+$description = $apartment['description'];
 
-$facilities =   $apartment['facilities'];
+$facilities = $apartment['facilities'];
 $tags = $apartment['tags'];
 
 $price_matrix = $apartment['price_matrix'];
 
-$rooms_count =  $apartment['rooms_count'];
-$kitchen =      $apartment['kitchen'];
-$bathroom =     $apartment['bathroom'];
-$furniture =    $apartment['furniture'];
-$floor =        $apartment['floor'];
+$rooms_count = $apartment['rooms_count'];
+$kitchen = $apartment['kitchen'];
+$bathroom = $apartment['bathroom'];
+$furniture = $apartment['furniture'];
+$floor = $apartment['floor'];
 
 $apart_images = get_apartment_images($apart_id);
 $img_count = $apart_images ? sizeof($apart_images) : 0;
@@ -30,22 +30,22 @@ $img_count = $apart_images ? sizeof($apart_images) : 0;
 $card_link = '/reservation/apartment/' . $apart_id;
 
 
-if(is_bool($kitchen)) {
+if (is_bool($kitchen)) {
     $kitchen = $kitchen ? "в номере" : "нет";
 }
-if(is_bool($bathroom)) {
+if (is_bool($bathroom)) {
     $bathroom = $bathroom ? "в номере" : "нет";
 }
 ?>
 
 
 <div class="hero hero--inside hero--card">
-    <div class="hero__bg js-app-bg" data-bg="<?=page_config('hero_image')?>"></div>
+    <div class="hero__bg js-app-bg" data-bg="<?= page_config('hero_image') ?>"></div>
 
     <div class="hero__content">
         <div class="hero__text">
 
-            <h1 class="hero__header h1"><?=$title?></h1>
+            <h1 class="hero__header h1"><?= $title ?></h1>
 
 
             <nav class="crumbs">
@@ -74,7 +74,7 @@ if(is_bool($bathroom)) {
                     </div>
 
                     <div class="crumbs__item">
-                        <span class="crumbs__current"><?=$title?></span>
+                        <span class="crumbs__current"><?= $title ?></span>
                     </div>
 
                 </div>
@@ -106,19 +106,20 @@ if(is_bool($bathroom)) {
 
                 <div class="card__images js-card-images" <?= $img_count > 0 ? '' : 'hidden' ?>>
                     <div class="card__images-counter">
-                        <span class="card__images-counter-current js-card-current-slide"><?= $img_count > 0 ? 1 : 0 ?></span>
+                        <span
+                            class="card__images-counter-current js-card-current-slide"><?= $img_count > 0 ? 1 : 0 ?></span>
                         <span class="card__images-counter-sep">из</span>
                         <span class="card__images-counter-all"><?= $img_count ?></span>
                     </div>
                     <div class="card__images-gallery js-card-images-gallery">
                         <?
-                        if($img_count > 0) {
+                        if ($img_count > 0) {
                             foreach ($apart_images as $k => $image) {
                                 ?>
                                 <picture class="card__image">
                                     <source srcset="<?= $image ?>" media="(max-width: 979px)" type="image/png">
                                     <source srcset="<?= $image ?>" media="(min-width: 980px)" type="image/png">
-                                    <img       src="<?= $image ?>" alt="">
+                                    <img src="<?= $image ?>" alt="">
                                 </picture>
                                 <?
                             }
@@ -164,8 +165,8 @@ if(is_bool($bathroom)) {
                             <div class="card__table-body">
                                 <? foreach ($price_matrix as $month => $price) { ?>
                                     <div class="card__table-row">
-                                        <div class="card__table-col"><span><?=$month?></span></div>
-                                        <div class="card__table-col"><span><?=$price?> Р / сутки</span></div>
+                                        <div class="card__table-col"><span><?= $month ?></span></div>
+                                        <div class="card__table-col"><span><?= $price ?> Р / сутки</span></div>
                                     </div>
                                 <? } ?>
                             </div>
@@ -181,12 +182,13 @@ if(is_bool($bathroom)) {
                         <form class="form js-form">
                             <div class="form__head">
                                 <div class="form__title">Забронируйте этот номер</div>
-                                <div class="form__subtitle">и наши специалисты свяжутся с вами</div>
+                                <div class="form__subtitle">и наш администратор свяжется с вами</div>
                             </div>
 
                             <div class="form__items">
                                 <div class="form__item">
-                                    <input required="" id="form_name" name="name" placeholder="Имя" type="text" class="input form__input">
+                                    <input required="" id="form_name" name="name" placeholder="Имя" type="text"
+                                           class="input form__input">
                                 </div>
                                 <div class="form__item">
                                     <input required="" id="form_infdata" class="input form__input js-date"
@@ -216,16 +218,20 @@ if(is_bool($bathroom)) {
                                             </div>
                                             <div class="counter__reservation">
                                                 <div class="counter__selected"></div>
-                                                <button type="button" class="counter__change js-counter-change">Изменить</button>
+                                                <button type="button" class="counter__change js-counter-change">
+                                                    Изменить
+                                                </button>
                                             </div>
                                             <div class="counter__controls">
                                                 <button type="button"
                                                         class="counter__button counter__button--minus js-input-spinner-minus">
                                                     <span class="counter__button-text">-</span>
                                                 </button>
-                                                <input value="" id="form_persons" required="" data-maxlength="2" type="number"
+                                                <input value="" id="form_persons" required="" data-maxlength="2"
+                                                       type="number"
                                                        class="counter__input js-input-spinner-counter">
-                                                <button type="button" class="counter__button counter__button--plus js-input-spinner-plus">
+                                                <button type="button"
+                                                        class="counter__button counter__button--plus js-input-spinner-plus">
                                                     <span class="counter__button-text">+</span>
                                                 </button>
                                             </div>
@@ -233,7 +239,8 @@ if(is_bool($bathroom)) {
                                     </div><!-- counter -->
                                 </div>
                                 <div class="form__item">
-                                    <textarea id="form_message" placeholder="Комментарий" class="textarea form__textarea"></textarea>
+                                    <textarea id="form_message" placeholder="Комментарий"
+                                              class="textarea form__textarea"></textarea>
                                 </div>
                             </div>
 
@@ -267,19 +274,20 @@ if(is_bool($bathroom)) {
                     <!-- noindex -->
                     <div class="card__images js-card-images" <?= $img_count > 0 ? '' : 'hidden' ?>>
                         <div class="card__images-counter">
-                            <span class="card__images-counter-current js-card-current-slide"><?= $img_count > 0 ? 1 : 0 ?></span>
+                            <span
+                                class="card__images-counter-current js-card-current-slide"><?= $img_count > 0 ? 1 : 0 ?></span>
                             <span class="card__images-counter-sep">из</span>
                             <span class="card__images-counter-all"><?= $img_count ?></span>
                         </div>
                         <div class="card__images-gallery js-card-images-gallery">
                             <?
-                            if($img_count > 0) { // fixme dublicate code?
+                            if ($img_count > 0) { // fixme dublicate code?
                                 foreach ($apart_images as $k => $image) {
                                     ?>
                                     <picture class="card__image">
                                         <source srcset="<?= $image ?>" media="(max-width: 979px)" type="image/png">
                                         <source srcset="<?= $image ?>" media="(min-width: 980px)" type="image/png">
-                                        <img       src="<?= $image ?>" alt="">
+                                        <img src="<?= $image ?>" alt="">
                                     </picture>
                                     <?
                                 }
@@ -297,17 +305,43 @@ if(is_bool($bathroom)) {
                         </div>
                         <div class="card__meta">
                             <div class="card__meta-item">
-                                <strong>Комнат:</strong> <?= $rooms_count ?>
+                                <strong>Удобства:</strong>
+                                <?
+
+                                if (is_string($facilities)) {
+                                    echo $facilities;
+                                } elseif (is_array($facilities) && count($facilities) > 0) {
+
+                                    echo '<ul>';
+                                    foreach ($facilities as $i => $facility) {
+                                        echo '<li>' . $facility . '</li>';
+                                    }
+                                    echo '</ul>';
+
+                                }
+
+                                ?>
                             </div>
                             <div class="card__meta-item">
-                                <strong>Кухня:</strong> <?= $kitchen ?>
+                                <strong>Комнат:</strong> <?= $rooms_count ?>
                             </div>
+
+                            <? if ($kitchen) { ?>
+                                <div class="card__meta-item">
+                                    <strong>Кухня:</strong> <?= $kitchen ?>
+                                </div>
+                            <? } ?>
+
                             <div class="card__meta-item">
                                 <strong>Санузел:</strong> <?= $bathroom ?>
                             </div>
-                            <div class="card__meta-item">
-                                <strong>Мебель:</strong> <?= $furniture ?>
-                            </div>
+
+                            <? if ($furniture) { ?>
+                                <div class="card__meta-item">
+                                    <strong>Мебель:</strong> <?= $furniture ?>
+                                </div>
+                            <? } ?>
+
                             <div class="card__meta-item">
                                 <strong>Этаж:</strong> <?= $floor ?>
                             </div>
@@ -360,7 +394,7 @@ if(is_bool($bathroom)) {
 
                                         <div class="contacts__item-text">
                                             <div class="contacts__item-link">
-                                                <a href="<?= config('social_whatsapp_link'); ?>">
+                                                <a href="<?= config('social_whatsapp_link'); ?>" target="_blank">
                                                     <?= config('display_phones')['phone_main']; ?>
                                                 </a>
                                             </div>
