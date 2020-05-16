@@ -3684,7 +3684,7 @@ html {
 
 .tags__container .tag__item {
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid #ccddf7;
     border-radius: 8px;
     margin-bottom: 3px;
     padding: 2px 4px;
