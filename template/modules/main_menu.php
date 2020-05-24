@@ -4,7 +4,7 @@
         $menu_items = config('nav_menu');
         $menu_size = sizeof($menu_items);
 
-        $left_count = intdiv($menu_size, 2) + $menu_size % 2;
+        $left_count = floor($menu_size / 2) + $menu_size % 2;
 
         $current_page = get_current_page();
 
