@@ -319,6 +319,7 @@ function get_apartments()
         // new classification 20+
 
         20 => [
+            'active' => true,
             'title' => 'Студия',
             'min_persons' => 2,
             'max_persons' => 3,
@@ -363,6 +364,7 @@ function get_apartments()
             'azur_id' => '11725'
         ],
         21 => [
+            'active' => true,
             'title' => 'Апартаменты с 2-мя спальнями',
             'min_persons' => 4,
             'max_persons' => 4,
@@ -409,6 +411,7 @@ function get_apartments()
             // fixme обновить фотографии
         ],
         22 => [
+            'active' => true,
             'title' => 'Апартаменты с большой гостиной и одной спальней',
             'min_persons' => 2,
             'max_persons' => 5, // +3
@@ -453,6 +456,7 @@ function get_apartments()
             // fixme обновить фотографии
         ],
         23 => [
+            'active' => true,
             'title' => 'Апартаменты с гостиной и двумя спальнями',
             'min_persons' => 4,
             'max_persons' => 6, // 2 +2 +2
@@ -497,6 +501,7 @@ function get_apartments()
             'azur_id' => '46120'
         ],
         24 => [
+            'active' => true,
             'title' => 'Апартаменты с гостиной, двумя спальнями и верандой',
             'min_persons' => 4,
             'max_persons' => 6, // 2 +2 +2

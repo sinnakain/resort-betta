@@ -10,6 +10,12 @@ function render_apartments_list()
     $apartments = get_apartments_by_persons($persons_count);
 
     foreach ($apartments as $id => $apartment) {
+
+
+        if(!isset($apartment['active']) || !$apartment['active']) {
+            continue;
+        }
+
         $title = $apartment['title'];
         $min_persons = $apartment['min_persons'];
         $max_persons = $apartment['max_persons'];
