@@ -1179,7 +1179,7 @@ html {
 }
 
 .apartment__columns {
-    margin-top: 15px;
+    margin-top: 20px;
     margin-bottom: 13px;
     display: -ms-flexbox;
     display: flex;
@@ -3680,6 +3680,9 @@ html {
     color: rgba(255, 255, 255, 0.6);
 }
 
+.tags__container .tag__item:hover {
+    border-color: #87baff;
+}
 
 
 .tags__container .tag__item {
@@ -3688,6 +3691,7 @@ html {
     border-radius: 8px;
     margin-bottom: 3px;
     padding: 2px 4px;
+    cursor: default;
 }
 
 .tag__item span {
@@ -4401,7 +4405,7 @@ html {
     }
 
     .apartment--reservation .apartment__body-head {
-        min-height: 0;
+        min-height: 74px;
         display: -ms-flexbox;
         display: flex;
         width: 72.02%;
@@ -4424,7 +4428,6 @@ html {
     .apartment--reservation .apartment__adds {
         max-height: none;
         overflow: visible;
-        width: 57.5%;
     }
 
     .apartment--reservation .apartment__places--desktop {
