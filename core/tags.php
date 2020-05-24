@@ -7,66 +7,82 @@ function get_tags()
     return [
         'double_bed' => [
             'title' => 'Двуспальная кровать',
-            'icon' => '#double_bed'
+            'short_title' => null,
+            'icon' => '#double_bed',
         ],
         'bed' => [
             'title' => 'Односпальная кровать',
+            'short_title' => 'Кровать',
             'icon' => '#bed'
         ],
         'sofa' => [
             'title' => 'Кресло-кровать',
+            'short_title' => null,
             'icon' => '#sofa'
         ],
         'parking' => [
             'title' => 'Бесплатная парковка',
+            'short_title' => 'Парковка',
             'icon' => '#parking'
         ],
         'bathroom' => [
             'title' => 'Ванная комната',
+            'short_title' => 'Ванная',
             'icon' => '#bathroom'
         ],
         'wifi' => [
             'title' => 'Wi-Fi',
+            'short_title' => null,
             'icon' => '#wifi'
         ],
         'conditioner' => [
             'title' => 'Кондиционер',
+            'short_title' => null,
             'icon' => '#conditioner'
         ],
         'washer' => [
             'title' => 'Доступ к стиральной машине',
+            'short_title' => null,
             'icon' => '#washer'
         ],
         'pet' => [
             'title' => 'Размещение с питомцами',
+            'short_title' => null,
             'icon' => '#pet'
         ],
         'balcony' => [
             'title' => 'Балкон',
+            'short_title' => null,
             'icon' => '#balcony'
         ],
         'loggia' => [
             'title' => 'Лоджия',
+            'short_title' => null,
             'icon' => '#loggia'
         ],
         'veranda' => [
             'title' => 'Веранда',
+            'short_title' => null,
             'icon' => '#veranda'
         ],
         'kitchen' => [
             'title' => 'Просторная кухня',
+            'short_title' => null,
             'icon' => '#kitchen'
         ],
         'kitchen_2' => [
             'title' => 'Просторная кухня',
+            'short_title' => null,
             'icon' => '#kitchen_2'
         ],
         'big_sofa' => [
             'title' => 'Двуспальный диван',
+            'short_title' => null,
             'icon' => '#big_sofa'
         ],
         'big_sofa_2' => [
             'title' => 'Двуспальный диван',
+            'short_title' => null,
             'icon' => '#big_sofa_2'
         ],
     ];
@@ -77,11 +93,20 @@ function get_tag($tag_id)
     return get_tags()[$tag_id];
 }
 
-function render_tag($tag_id)
+function render_tag($tag_id, $short_title = false)
 {
     $tag = get_tag($tag_id);
 
     $title = $tag['title'];
+
+    if($short_title) {
+        $short_title = $tag['short_title'];
+        if($short_title != null) {
+            $title = $short_title;
+        }
+    }
+
+
     $icon = $tag['icon'];
 
     ?>
@@ -97,12 +122,12 @@ function render_tag($tag_id)
     <?
 }
 
-function render_tags($tag_ids, $wrap_items = true)
+function render_tags($tag_ids, $wrap_items = true, $short_title = false)
 {
     echo $wrap_items ? '<div class="tags__container">' : '';
 
     foreach ($tag_ids as $k => $tag_id) {
-        render_tag($tag_id);
+        render_tag($tag_id, $short_title);
     }
 
     echo $wrap_items ? '</div>' : '';

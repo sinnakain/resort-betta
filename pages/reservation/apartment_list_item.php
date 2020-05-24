@@ -81,7 +81,7 @@ function render_apartments_list()
                     <div class="apartment__body-hidden">
                         <div class="apartment__body-limit">
                             <div class="apartment__adds">
-                                <? render_tags($tags); ?>
+                                <? render_tags($tags, true, true); ?>
                             </div>
                             <div class="apartment__columns">
                                 <div class="apartment__column apartment__column--more">
