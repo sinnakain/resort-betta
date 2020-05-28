@@ -1,10 +1,10 @@
 <div class="hero hero--inside">
-    <div class="hero__bg js-app-bg" data-bg="<?=page_config('hero_image')?>"></div>
+    <div class="hero__bg js-app-bg" data-bg="<?= page_config('hero_image') ?>"></div>
 
     <div class="hero__content">
         <div class="hero__text">
 
-            <h1 class="hero__header h1">Курорт Бетта</h1>
+            <h1 class="hero__header h1">Для гостей</h1>
 
 
             <nav class="crumbs">
@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="crumbs__item">
-                        <span href="/resort-betta" class="crumbs__current">Курорт Бетта</span>
+                        <span class="crumbs__current">Для гостей</span>
                     </div>
 
                 </div>
@@ -35,682 +35,106 @@
 
 <div class="resort-betta-list">
     <div class="resort-betta-list__container container">
-        <div class="resort-betta-list__items js-ajax-resort-items">
 
-            <div class="resort-betta-list__item">
+        <style> <!-- move to css -->
+            .service-images__wrapper {
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 40px;
+            }
 
+            .service-images__wrapper img {
+                width: 250px;
 
-                <div class="resort-betta">
-                    <div class="resort-betta__container">
-                        <div class="resort-betta__image">
-                            <a href="#" class="resort-betta__image-link">
-                                <picture class="resort-betta__picture">
-                                    <source srcset="img/resot-betta-pic-mobile.png" media="(max-width: 979px)"
-                                            type="image/png">
-                                    <source srcset="img/resot-betta-pic-desktop.png" media="(min-width: 980px)"
-                                            type="image/png">
-                                    <img src="img/resot-betta-pic-desktop.png" alt="">
-                                </picture>
-                            </a>
-                        </div>
-                        <div class="resort-betta__body">
-                            <div class="resort-betta__title">
-                                <a href="#" class="resort-betta__title-link">Прогулки на джипах</a>
-                            </div>
-                            <div class="resort-betta__text">Путешествие на автомобилях повышенной проходимости с
-                                преодолением
-                                природных препятствий. Для участия в джиппинге не требуется обладать особыми навыками. В
-                                них может
-                                принять участие любой, кто желает получить незабываемые впечатления.
-                            </div>
-                            <div class="resort-betta__meta">
-                                <div class="resort-betta__meta-col resort-betta__meta-col--price">
-                                    <div class="resort-betta__meta-item resort-betta__meta-item--price">
+            }
+
+            .services-description__content h2 {
+                margin: 20px 0 20px 0;
+            }
+        </style>
 
 
-                                        <div class="svg-icon svg-icon--price" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#price"></use>
-                                            </svg>
-                                        </div>
+        <div class="services-description__content">
+            <p>Бетта - небольшой курорт в окружении девственной природы с глубокими ущельями, густыми лесами, галечными
+                пляжами и теплым прозрачным морем. Попадая в этот райский уголок, забываешь обо всем и первые несколько
+                дней хочется изучить каждый его метр.</p>
 
 
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">550 руб / 1 взрослый</div>
-                                            <div class="resort-betta__meta-text">350 руб / 1 детский (до 14 лет)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="resort-betta__meta-col resort-betta__meta-col--info">
-                                    <div class="resort-betta__meta-item">
+            <p>Но хороший отдых на море - не только пляжи и уютные кафе. Он состоит из мелочей. Мы сделали все, чтобы
+                каждая минута пребывания в Resort-Betta приносила удовольствие.</p>
 
 
-                                        <div class="svg-icon svg-icon--clock" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#clock"></use>
-                                            </svg>
-                                        </div>
+            <p>Гордость Курорта-Бетта - комфортабельные номера. Но еще мы позаботились о разнообразии досуга и бытовых
+                мелочах для гостей. Вокруг комплекса красивый ландшафтный дизайн, создана уютная обстановка, где можно
+                провести время большой компанией или подумать наедине. На огражденной территории:</p>
 
 
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">180 минут</div>
-                                        </div>
-                                    </div>
+            <h2>Детская площадка</h2>
 
-                                    <div class="resort-betta__meta-item">
+            <p>Горка выглядит как сказочный теремок и станет эпицентром детских забав. На нижнем ярусе внутри уютного
+                домика есть лавочки со столиком, после активных игр дети смогут перейти к более спокойному отдыху. Рядом
+                качели, без которых свою жизнь не представляет ни один ребенок. Зона расположилась перед жилым корпусом
+                с апартаментами. Ребятня всегда на виду у взрослых.</p>
 
-
-                                        <div class="svg-icon svg-icon--phone-icon" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#phone-icon"></use>
-                                            </svg>
-                                        </div>
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">
-                                                <a href="tel:+79273333333" class="resort-betta__meta-phone">+7 927 333
-                                                    33 33</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- resort-betta -->
+            <div class="service-images__wrapper">
+                <img src="/img/services/Детская_площадка-min.jpg"/>
+                <img src="/img/services/Детска_площадка2-min.jpg"/>
             </div>
 
-            <div class="resort-betta-list__item">
+
+            <h2>Мангал</h2>
+
+            <p>Без чего сложно представить отдых на море? Правильно, без ароматного шашлыка, рыбки на гриле. Мы
+                обустроили крытые беседки с мангалом-печью - никакого дыма в лицо. Подведена вода, водосток, в
+                распоряжении набор кухонных принадлежностей.</p>
 
 
-                <div class="resort-betta">
-                    <div class="resort-betta__container">
-                        <div class="resort-betta__image">
-                            <a href="#" class="resort-betta__image-link">
-                                <picture class="resort-betta__picture">
-                                    <source srcset="img/resot-betta-pic-mobile.png" media="(max-width: 979px)"
-                                            type="image/png">
-                                    <source srcset="img/resot-betta-pic-desktop.png" media="(min-width: 980px)"
-                                            type="image/png">
-                                    <img src="img/resot-betta-pic-desktop.png" alt="">
-                                </picture>
-                            </a>
-                        </div>
-                        <div class="resort-betta__body">
-                            <div class="resort-betta__title">
-                                <a href="#" class="resort-betta__title-link">Прогулки на джипах</a>
-                            </div>
-                            <div class="resort-betta__text">Путешествие на автомобилях повышенной проходимости с
-                                преодолением
-                                природных препятствий. Для участия в джиппинге не требуется обладать особыми навыками. В
-                                них может
-                                принять участие любой, кто желает получить незабываемые впечатления.
-                            </div>
-                            <div class="resort-betta__meta">
-                                <div class="resort-betta__meta-col resort-betta__meta-col--price">
-                                    <div class="resort-betta__meta-item resort-betta__meta-item--price">
+            <p>Мангальные зоны расположены на территории комплекса, огражденной заборчиком. Непрошенные гости не
+                испортят отдых. Бесплатно для наших постояльцев.</p>
 
-
-                                        <div class="svg-icon svg-icon--price" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#price"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">550 руб / 1 взрослый</div>
-                                            <div class="resort-betta__meta-text">350 руб / 1 детский (до 14 лет)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="resort-betta__meta-col resort-betta__meta-col--info">
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--clock" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#clock"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">180 минут</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--phone-icon" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#phone-icon"></use>
-                                            </svg>
-                                        </div>
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">
-                                                <a href="tel:+79273333333" class="resort-betta__meta-phone">+7 927 333
-                                                    33 33</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- resort-betta -->
+            <div class="service-images__wrapper">
+                <img src="/img/services/Беседка-min.jpg"/>
+                <img src="/img/services/Беседки_2-min.jpg"/>
             </div>
 
-            <div class="resort-betta-list__item">
+
+            <h2>Настольный теннис</h2>
+
+            <p>Не хочется сидеть в комнате теплыми вечерами? Мы за активный отдых и установили во дворе теннисный стол.
+                Можно взять свои ракетки или попросить у администрации. Зона открыта для гостей круглосуточно.</p>
+
+            <h2>Парковка</h2>
 
 
-                <div class="resort-betta">
-                    <div class="resort-betta__container">
-                        <div class="resort-betta__image">
-                            <a href="#" class="resort-betta__image-link">
-                                <picture class="resort-betta__picture">
-                                    <source srcset="img/resot-betta-pic-mobile.png" media="(max-width: 979px)"
-                                            type="image/png">
-                                    <source srcset="img/resot-betta-pic-desktop.png" media="(min-width: 980px)"
-                                            type="image/png">
-                                    <img src="img/resot-betta-pic-desktop.png" alt="">
-                                </picture>
-                            </a>
-                        </div>
-                        <div class="resort-betta__body">
-                            <div class="resort-betta__title">
-                                <a href="#" class="resort-betta__title-link">Прогулки на джипах</a>
-                            </div>
-                            <div class="resort-betta__text">Путешествие на автомобилях повышенной проходимости с
-                                преодолением
-                                природных препятствий. Для участия в джиппинге не требуется обладать особыми навыками. В
-                                них может
-                                принять участие любой, кто желает получить незабываемые впечатления.
-                            </div>
-                            <div class="resort-betta__meta">
-                                <div class="resort-betta__meta-col resort-betta__meta-col--price">
-                                    <div class="resort-betta__meta-item resort-betta__meta-item--price">
+            <p>Просторная парковка на закрытой территории. Есть места для авто под навесом в тени от виноградной лозы,
+                защищающей от южного солнца и рядом с жилыми корпусами.</p>
 
 
-                                        <div class="svg-icon svg-icon--price" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#price"></use>
-                                            </svg>
-                                        </div>
+            <h2>Хозяйственный блок</h2>
 
 
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">550 руб / 1 взрослый</div>
-                                            <div class="resort-betta__meta-text">350 руб / 1 детский (до 14 лет)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="resort-betta__meta-col resort-betta__meta-col--info">
-                                    <div class="resort-betta__meta-item">
+            <p>Хотите освежить одежду? Для гостей мы установили стиральные машины в отдельном хозблоке. Услуга
+                бесплатная для всех постояльцев, независимо от времени пребывания.</p>
 
 
-                                        <div class="svg-icon svg-icon--clock" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#clock"></use>
-                                            </svg>
-                                        </div>
+            <h2>Баня...</h2>
 
 
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">180 минут</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="resort-betta__meta-item">
+            <p>Это место, где можно омыть не только тело, но и отдохнуть душой. Отличный способ провести время, если
+                вдруг на отдыхе вас застал дождь или прохладная погода.</p>
 
 
-                                        <div class="svg-icon svg-icon--phone-icon" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#phone-icon"></use>
-                                            </svg>
-                                        </div>
+            <p>Уютная баня с большим предбанником и бассейном, где можно устроить романтический вечер или посиделки
+                дружной компании. Чтобы заказать отдых, подойдите к администратору. Поскольку на подготовку нужны
+                большие затраты, это единственная платная услуга в нашем гостевом комплексе.</p>
 
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">
-                                                <a href="tel:+79273333333" class="resort-betta__meta-phone">+7 927 333
-                                                    33 33</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- resort-betta -->
+            <div class="service-images__wrapper">
+                <img src="/img/services/Баня.jpg"/>
+                <img src="/img/services/Баня_2.jpg"/>
             </div>
 
-            <div class="resort-betta-list__item">
 
-
-                <div class="resort-betta">
-                    <div class="resort-betta__container">
-                        <div class="resort-betta__image">
-                            <a href="#" class="resort-betta__image-link">
-                                <picture class="resort-betta__picture">
-                                    <source srcset="img/resot-betta-pic-mobile.png" media="(max-width: 979px)"
-                                            type="image/png">
-                                    <source srcset="img/resot-betta-pic-desktop.png" media="(min-width: 980px)"
-                                            type="image/png">
-                                    <img src="img/resot-betta-pic-desktop.png" alt="">
-                                </picture>
-                            </a>
-                        </div>
-                        <div class="resort-betta__body">
-                            <div class="resort-betta__title">
-                                <a href="#" class="resort-betta__title-link">Прогулки на джипах</a>
-                            </div>
-                            <div class="resort-betta__text">Путешествие на автомобилях повышенной проходимости с
-                                преодолением
-                                природных препятствий. Для участия в джиппинге не требуется обладать особыми навыками. В
-                                них может
-                                принять участие любой, кто желает получить незабываемые впечатления.
-                            </div>
-                            <div class="resort-betta__meta">
-                                <div class="resort-betta__meta-col resort-betta__meta-col--price">
-                                    <div class="resort-betta__meta-item resort-betta__meta-item--price">
-
-
-                                        <div class="svg-icon svg-icon--price" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#price"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">550 руб / 1 взрослый</div>
-                                            <div class="resort-betta__meta-text">350 руб / 1 детский (до 14 лет)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="resort-betta__meta-col resort-betta__meta-col--info">
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--clock" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#clock"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">180 минут</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--phone-icon" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#phone-icon"></use>
-                                            </svg>
-                                        </div>
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">
-                                                <a href="tel:+79273333333" class="resort-betta__meta-phone">+7 927 333
-                                                    33 33</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- resort-betta -->
-            </div>
-
-            <div class="resort-betta-list__item">
-
-
-                <div class="resort-betta">
-                    <div class="resort-betta__container">
-                        <div class="resort-betta__image">
-                            <a href="#" class="resort-betta__image-link">
-                                <picture class="resort-betta__picture">
-                                    <source srcset="img/resot-betta-pic-mobile.png" media="(max-width: 979px)"
-                                            type="image/png">
-                                    <source srcset="img/resot-betta-pic-desktop.png" media="(min-width: 980px)"
-                                            type="image/png">
-                                    <img src="img/resot-betta-pic-desktop.png" alt="">
-                                </picture>
-                            </a>
-                        </div>
-                        <div class="resort-betta__body">
-                            <div class="resort-betta__title">
-                                <a href="#" class="resort-betta__title-link">Прогулки на джипах</a>
-                            </div>
-                            <div class="resort-betta__text">Путешествие на автомобилях повышенной проходимости с
-                                преодолением
-                                природных препятствий. Для участия в джиппинге не требуется обладать особыми навыками. В
-                                них может
-                                принять участие любой, кто желает получить незабываемые впечатления.
-                            </div>
-                            <div class="resort-betta__meta">
-                                <div class="resort-betta__meta-col resort-betta__meta-col--price">
-                                    <div class="resort-betta__meta-item resort-betta__meta-item--price">
-
-
-                                        <div class="svg-icon svg-icon--price" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#price"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">550 руб / 1 взрослый</div>
-                                            <div class="resort-betta__meta-text">350 руб / 1 детский (до 14 лет)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="resort-betta__meta-col resort-betta__meta-col--info">
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--clock" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#clock"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">180 минут</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--phone-icon" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#phone-icon"></use>
-                                            </svg>
-                                        </div>
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">
-                                                <a href="tel:+79273333333" class="resort-betta__meta-phone">+7 927 333
-                                                    33 33</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- resort-betta -->
-            </div>
-
-            <div class="resort-betta-list__item">
-
-
-                <div class="resort-betta">
-                    <div class="resort-betta__container">
-                        <div class="resort-betta__image">
-                            <a href="#" class="resort-betta__image-link">
-                                <picture class="resort-betta__picture">
-                                    <source srcset="img/resot-betta-pic-mobile.png" media="(max-width: 979px)"
-                                            type="image/png">
-                                    <source srcset="img/resot-betta-pic-desktop.png" media="(min-width: 980px)"
-                                            type="image/png">
-                                    <img src="img/resot-betta-pic-desktop.png" alt="">
-                                </picture>
-                            </a>
-                        </div>
-                        <div class="resort-betta__body">
-                            <div class="resort-betta__title">
-                                <a href="#" class="resort-betta__title-link">Прогулки на джипах</a>
-                            </div>
-                            <div class="resort-betta__text">Путешествие на автомобилях повышенной проходимости с
-                                преодолением
-                                природных препятствий. Для участия в джиппинге не требуется обладать особыми навыками. В
-                                них может
-                                принять участие любой, кто желает получить незабываемые впечатления.
-                            </div>
-                            <div class="resort-betta__meta">
-                                <div class="resort-betta__meta-col resort-betta__meta-col--price">
-                                    <div class="resort-betta__meta-item resort-betta__meta-item--price">
-
-
-                                        <div class="svg-icon svg-icon--price" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#price"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">550 руб / 1 взрослый</div>
-                                            <div class="resort-betta__meta-text">350 руб / 1 детский (до 14 лет)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="resort-betta__meta-col resort-betta__meta-col--info">
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--clock" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#clock"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">180 минут</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--phone-icon" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#phone-icon"></use>
-                                            </svg>
-                                        </div>
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">
-                                                <a href="tel:+79273333333" class="resort-betta__meta-phone">+7 927 333
-                                                    33 33</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- resort-betta -->
-            </div>
-
-            <div class="resort-betta-list__item">
-
-
-                <div class="resort-betta">
-                    <div class="resort-betta__container">
-                        <div class="resort-betta__image">
-                            <a href="#" class="resort-betta__image-link">
-                                <picture class="resort-betta__picture">
-                                    <source srcset="img/resot-betta-pic-mobile.png" media="(max-width: 979px)"
-                                            type="image/png">
-                                    <source srcset="img/resot-betta-pic-desktop.png" media="(min-width: 980px)"
-                                            type="image/png">
-                                    <img src="img/resot-betta-pic-desktop.png" alt="">
-                                </picture>
-                            </a>
-                        </div>
-                        <div class="resort-betta__body">
-                            <div class="resort-betta__title">
-                                <a href="#" class="resort-betta__title-link">Прогулки на джипах</a>
-                            </div>
-                            <div class="resort-betta__text">Путешествие на автомобилях повышенной проходимости с
-                                преодолением
-                                природных препятствий. Для участия в джиппинге не требуется обладать особыми навыками. В
-                                них может
-                                принять участие любой, кто желает получить незабываемые впечатления.
-                            </div>
-                            <div class="resort-betta__meta">
-                                <div class="resort-betta__meta-col resort-betta__meta-col--price">
-                                    <div class="resort-betta__meta-item resort-betta__meta-item--price">
-
-
-                                        <div class="svg-icon svg-icon--price" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#price"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">550 руб / 1 взрослый</div>
-                                            <div class="resort-betta__meta-text">350 руб / 1 детский (до 14 лет)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="resort-betta__meta-col resort-betta__meta-col--info">
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--clock" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#clock"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">180 минут</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--phone-icon" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#phone-icon"></use>
-                                            </svg>
-                                        </div>
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">
-                                                <a href="tel:+79273333333" class="resort-betta__meta-phone">+7 927 333
-                                                    33 33</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- resort-betta -->
-            </div>
-
-            <div class="resort-betta-list__item">
-
-
-                <div class="resort-betta">
-                    <div class="resort-betta__container">
-                        <div class="resort-betta__image">
-                            <a href="#" class="resort-betta__image-link">
-                                <picture class="resort-betta__picture">
-                                    <source srcset="img/resot-betta-pic-mobile.png" media="(max-width: 979px)"
-                                            type="image/png">
-                                    <source srcset="img/resot-betta-pic-desktop.png" media="(min-width: 980px)"
-                                            type="image/png">
-                                    <img src="img/resot-betta-pic-desktop.png" alt="">
-                                </picture>
-                            </a>
-                        </div>
-                        <div class="resort-betta__body">
-                            <div class="resort-betta__title">
-                                <a href="#" class="resort-betta__title-link">Прогулки на джипах</a>
-                            </div>
-                            <div class="resort-betta__text">Путешествие на автомобилях повышенной проходимости с
-                                преодолением
-                                природных препятствий. Для участия в джиппинге не требуется обладать особыми навыками. В
-                                них может
-                                принять участие любой, кто желает получить незабываемые впечатления.
-                            </div>
-                            <div class="resort-betta__meta">
-                                <div class="resort-betta__meta-col resort-betta__meta-col--price">
-                                    <div class="resort-betta__meta-item resort-betta__meta-item--price">
-
-
-                                        <div class="svg-icon svg-icon--price" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#price"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">550 руб / 1 взрослый</div>
-                                            <div class="resort-betta__meta-text">350 руб / 1 детский (до 14 лет)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="resort-betta__meta-col resort-betta__meta-col--info">
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--clock" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#clock"></use>
-                                            </svg>
-                                        </div>
-
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">180 минут</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="resort-betta__meta-item">
-
-
-                                        <div class="svg-icon svg-icon--phone-icon" aria-hidden="true">
-                                            <svg class="svg-icon__link">
-                                                <use xlink:href="#phone-icon"></use>
-                                            </svg>
-                                        </div>
-
-                                        <div class="resort-betta__meta-data">
-                                            <div class="resort-betta__meta-text">
-                                                <a href="tel:+79273333333" class="resort-betta__meta-phone">+7 927 333
-                                                    33 33</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- resort-betta -->
-            </div>
-
+            <p>Resort-Betta - подарит впечатления на всю жизнь. Мы работаем, чтобы вы отдыхали.</p>
         </div>
     </div>
 </div><!-- resort-betta -->
-<div class="ajax-loader js-ajax-loader is-hidden" data-target=".js-ajax-resort-items"
-     data-url="api/resort/ajax-resort.html">
-    <div class="ajax-loader__preloader">
-        <div class="ajax-loader__items">
-            <div class="ajax-loader__item"></div>
-            <div class="ajax-loader__item"></div>
-            <div class="ajax-loader__item"></div>
-        </div>
-    </div>
-</div><!-- ajax-loader -->
