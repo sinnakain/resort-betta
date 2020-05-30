@@ -69,7 +69,7 @@ function render_apartments_list()
                 <div class="apartment__body">
                     <div class="apartment__body-head">
                         <div class="apartment__title">
-                            <div class="apartment__title-text"><?= $title ?></div>
+                            <a href="<?= $card_link ?>" class="apartment__title-text"><?= $title ?></a>
                             <div class="apartment-places apartment__places apartment__places--mobile">
                                 <div class="apartment-places__icon">
                                     <div class="svg-icon svg-icon--counter-icon" aria-hidden="true">
