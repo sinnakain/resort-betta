@@ -9,11 +9,18 @@ function get_tags()
             'title' => 'Двуспальная кровать',
             'short_title' => null,
             'icon' => '#double_bed',
+            'is_wide' => true
         ],
         'bed' => [
             'title' => 'Односпальная кровать',
             'short_title' => 'Кровать',
             'icon' => '#bed'
+        ],
+        '2x_bed' => [
+            'title' => 'Односпальная кровать',
+            'short_title' => 'Кровать',
+            'icon' => '#bed',
+            'before_span' => '2x '
         ],
         'sofa' => [
             'title' => 'Кресло-кровать',
@@ -48,7 +55,7 @@ function get_tags()
         'pet' => [
             'title' => 'Размещение с питомцами',
             'short_title' => null,
-            'icon' => '#pet'
+            'icon' => '#paw'
         ],
         'balcony' => [
             'title' => 'Балкон',
@@ -78,7 +85,8 @@ function get_tags()
         'big_sofa' => [
             'title' => 'Двуспальный диван',
             'short_title' => null,
-            'icon' => '#big_sofa'
+            'icon' => '#big_sofa',
+            'is_wide' => true
         ],
         'big_sofa_2' => [
             'title' => 'Двуспальный диван',
@@ -99,19 +107,25 @@ function render_tag($tag_id, $short_title = false)
 
     $title = $tag['title'];
 
-    if($short_title) {
+    if ($short_title) {
         $short_title = $tag['short_title'];
-        if($short_title != null) {
+        if ($short_title != null) {
             $title = $short_title;
         }
     }
 
+    $before_span = isset($tag['before_span']) ? $tag['before_span'] : "";
+
 
     $icon = $tag['icon'];
+    $wide_style = isset($tag['is_wide']) && $tag['is_wide'] ? "svg-icon-wide" : "";
 
     ?>
     <div class="tag__item">
-        <div class="svg-icon" aria-hidden="true">
+
+        <?= $before_span ? "<span>{$before_span}</span>" : "" ?>
+
+        <div class="svg-icon <?= $wide_style ?>" aria-hidden="true">
             <svg class="svg-icon__link">
                 <use xlink:href="<?= $icon; ?>"></use>
             </svg>

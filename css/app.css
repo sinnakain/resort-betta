@@ -3695,7 +3695,7 @@ html {
 }
 
 .tag__item span {
-    padding-left: 4px;
+    padding-left: 2px;
     white-space: nowrap;
 }
 
@@ -3706,6 +3706,10 @@ html {
     fill: currentColor;
     font-size: 100%;
     margin: 0;
+}
+
+.tag__item .svg-icon.svg-icon-wide {
+    width: 26px;
 }
 
 

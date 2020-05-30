@@ -165,7 +165,7 @@ function get_apartments()
 
             'facilities' => 'телевизор, сейф, система кондиционирования, балкон, кухня (холодильник, встроенная плита, чайник, посуда), cанузел, душ.',
             'tags' => [
-                'double_bed', 'bed', 'bed'
+                'double_bed', '2x_bed',
             ],
             'rooms_count' => 2,
             'kitchen' => true,
@@ -391,8 +391,7 @@ function get_apartments()
             ],
 
             'tags' => [
-                'double_bed', 'bed', 'bed', // fixme bed, bed?
-                'balcony', 'kitchen_2', 'parking', 'bathroom', 'wifi', 'conditioner', 'washer', 'pet'
+                'double_bed', '2x_bed', 'balcony', 'kitchen_2', 'parking', 'bathroom', 'wifi', 'conditioner', 'washer', 'pet'
             ],
 
             'rooms_count' => 2,
@@ -437,7 +436,7 @@ function get_apartments()
             ],
 
             'tags' => [
-                'double_bed', 'big_sofa', 'sofa',  'loggia', 'balcony', 'parking', 'bathroom', 'wifi', 'conditioner', 'washer', 'pet'
+                'double_bed', 'big_sofa', 'sofa', 'loggia', 'balcony', 'parking', 'bathroom', 'wifi', 'conditioner', 'washer', 'pet'
             ],
 
             'rooms_count' => 2,
@@ -482,8 +481,7 @@ function get_apartments()
             ],
 
             'tags' => [
-                'double_bed', 'bed', 'bed', // fixme bed, bed??
-                'big_sofa', 'balcony', 'parking', 'bathroom', 'wifi', 'conditioner', 'washer', 'pet'
+                'double_bed', '2x_bed', 'big_sofa', 'balcony', 'parking', 'bathroom', 'wifi', 'conditioner', 'washer', 'pet'
             ],
 
             'rooms_count' => 2, // fixme 2 or 3 ?
@@ -528,8 +526,7 @@ function get_apartments()
             ],
 
             'tags' => [
-                'double_bed', 'bed', 'bed', // fixme bed, bed??
-                'big_sofa', 'veranda', 'parking', 'bathroom', 'wifi', 'conditioner', 'washer', 'pet'
+                'double_bed', '2x_bed', 'big_sofa', 'veranda', 'parking', 'bathroom', 'wifi', 'conditioner', 'washer', 'pet'
             ],
 
             'rooms_count' => 2, // fixme 2 or 3 ?
