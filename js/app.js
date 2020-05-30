@@ -157,12 +157,20 @@ $(function () {
                 nav: false,
                 slideBy: 'page',
                 autoplay: false,
-                mouseDrag: drag,
-                touch: drag
+                mouseDrag: false,
+                touch: true,
+                controls: false
+
             });
             slider.events.on('transitionEnd', function () {
                 $current.html(slider.getInfo().displayIndex);
             });
+
+            // next on click
+            $this.on('click', function () {
+                slider.goTo('next');
+            });
+
             apartmentCounter++;
         };
 
@@ -174,8 +182,6 @@ $(function () {
     if ($.exists(apartmentImages)) {
         initApartmentImages();
     }
-
-    var $body = $('body');
 
 
     /* ========================================================================== */

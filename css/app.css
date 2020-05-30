@@ -4258,10 +4258,6 @@ html {
         background-color: #38822e;
     }
 
-    .apartment__images .tns-controls {
-        display: none;
-    }
-
     .apartment__images-counter {
         display: none;
     }
@@ -4373,14 +4369,14 @@ html {
     }
 
     .apartment--reservation .apartment__images {
-        width: 230px;
-        max-width: 230px;
-        -ms-flex: 0 0 230px;
-        flex: 0 0 230px;
+        width: 300px;
+        max-width: 300px;
+        -ms-flex: 0 0 300px;
+        flex: 0 0 300px;
     }
 
     .apartment--reservation .apartment__images-gallery {
-        height: 171px;
+        height: 272px;
     }
 
     .apartment--reservation .apartment__images-gallery.tns-slider .apartment__image {
@@ -4390,7 +4386,7 @@ html {
     }
 
     .apartment--reservation .apartment__images-gallery.tns-slider .apartment__image img {
-        height: auto;
+        height: 272px;
         width: 100%;
         position: absolute;
         left: 50%;
@@ -4402,17 +4398,14 @@ html {
     .apartment--reservation .apartment__body {
         -ms-flex: 1 1;
         flex: 1 1;
-        padding-top: 15px;
-        padding-left: 45px;
-        padding-right: 65px;
-        padding-bottom: 20px;
+        padding: 15px 30px 20px 35px;
     }
 
     .apartment--reservation .apartment__body-head {
         min-height: 74px;
         display: -ms-flexbox;
         display: flex;
-        width: 72.02%;
+        width: 71.02%;
     }
 
     .apartment--reservation .apartment__title {
@@ -4432,6 +4425,7 @@ html {
     .apartment--reservation .apartment__adds {
         max-height: none;
         overflow: visible;
+        padding: 8px 0 8px 0;
     }
 
     .apartment--reservation .apartment__places--desktop {
@@ -4444,7 +4438,7 @@ html {
         height: 41px;
         padding-left: 10px;
         padding-right: 10px;
-        margin-left: 20px;
+        margin-left: 10px;
     }
 
     .apartment--reservation .apartment__images-counter {
@@ -4463,7 +4457,7 @@ html {
     .apartment--reservation .apartment__column--price {
         position: absolute;
         top: 24px;
-        right: 67px;
+        right: 40px;
     }
 
     .apartment--reservation .apartment__column--price .apartment__price {
