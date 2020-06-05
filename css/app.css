@@ -863,13 +863,52 @@ html {
     position: relative;
 }
 
+.resort-betta-list .services__wrapper {
+    margin-top: 65px;
+}
+
+.resort-betta-list__container .about__body {
+    margin-top: 25px;
+}
+
+.resort-betta-list__container .about__body.service__reverse {
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+
+.resort-betta-list__container .about__body .about__image {
+    width: 384px;
+    height: 266px;
+}
+
+.resort-betta-list__container .about__body .about__title {
+    font-size: 28px;
+}
+
+.resort-betta-list__container .about__text {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    color: #312c3a;
+}
+.resort-betta-list__container .about__text__inner {
+    margin: auto;
+}
+
+.resort-betta-list__container .about__text p {
+    margin-bottom: 1.0rem;
+}
+
+
 .about__text {
     position: relative;
     background: #fff;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     color: #896f50;
-    padding: 25px 30px;
+    padding: 15px 30px;
     width: 86.5%;
     margin-left: auto;
     margin-bottom: 45px;
@@ -2946,6 +2985,9 @@ html {
 }
 
 .home-about {
+    background-image: url(/img/main-bcg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: #f5f5f5;
     position: relative;
     padding-top: 1px;
@@ -3151,7 +3193,7 @@ html {
 }
 
 .resort-betta-list__container {
-    padding-top: 40px;
+    padding-top: 50px;
     padding-bottom: 55px;
 }
 
@@ -3307,6 +3349,9 @@ html {
 }
 
 .reviews {
+    background-image: url(/img/main-bcg-bot.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #fff;
     text-align: center;
     background-color: #b58c5d;
@@ -4212,6 +4257,32 @@ html {
         margin-top: -18px;
     }
 
+
+    .resort-betta-list__container .about__content {
+        margin-top: 65px;
+    }
+
+    .resort-betta-list__container .about__text {
+        height: 178px;
+    }
+
+    .resort-betta-list__container .about__body .about__title {
+        position: absolute;
+        top: -50px;
+        left: 72px;
+    }
+
+    .resort-betta-list__container .about__body.service__reverse .about__title {
+        left: auto;
+    }
+
+    .resort-betta-list__container .about__body.service__reverse .about__text {
+        width:100%;
+        margin-left:50px
+    }
+
+
+
     .about__more {
         display: -ms-flexbox;
         display: flex;
@@ -4940,7 +5011,7 @@ html {
     }
 
     .resort-betta-list__container {
-        padding-top: 55px;
+        padding-top: 80px;
         padding-bottom: 60px;
     }
 
