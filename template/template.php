@@ -35,6 +35,7 @@
 
 <?php include("img/sprite.icons.svg"); ?>
 <?php include("img/sprite.tags.icons.svg"); ?>
+<?php include("img/sprite.colored.svg"); ?>
 
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade

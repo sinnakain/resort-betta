@@ -61,6 +61,16 @@ function get_apartment_images($apartment_id = 0)
     }
 }
 
-function get_see_also_items() {
-    return [4, 6, 7];
+function get_see_also_items($current_apartment = -1) {
+    $default_items = [20, 23, 24];
+    $default_replacement = 21;
+
+
+    foreach ($default_items as $k => $apart) {
+        if($current_apartment == $apart) {
+            $default_items[$k] = $default_replacement;
+        }
+    }
+
+    return $default_items;
 }

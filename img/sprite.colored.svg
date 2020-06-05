@@ -1,0 +1,6 @@
+<svg class="main-svg-sprite main-svg-sprite--colored" xmlns="http://www.w3.org/2000/svg">
+    <symbol fill="none" viewBox="0 0 13 9" id="check" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.553 2.974L.01 4.415l4.91 4.587L6.465 7.56 1.553 2.974z" fill="#14AD00"/>
+        <path d="M13.005 1.44L11.462-.001l-8.1 7.565 1.543 1.44 8.1-7.564z" fill="#14AD00"/>
+    </symbol>
+</svg>

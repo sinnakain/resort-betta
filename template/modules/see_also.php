@@ -5,12 +5,17 @@
                 <?
                 require_once 'core/apartments.php';
 
-                $see_also_items = get_see_also_items();
+                // todo refactoring
+                $path_params = get_URL_page_params();
+                $apart_id = isset($url_params[0]) ? $url_params[0] : -1;
+
+                $see_also_items = get_see_also_items($apart_id);
 
                 foreach ($see_also_items as $k => $apart_id) {
                     $apartment = get_apartment_by_id($apart_id);
 
-                    $title = $apartment['title'];
+                    $title = isset($apartment['title_offer']) ? $apartment['title_offer'] : $apartment['title'];
+
                     $min_persons = $apartment['min_persons'];
                     $max_persons = $apartment['max_persons'];
 
@@ -82,7 +87,25 @@
                                                     <use xlink:href="#check"></use>
                                                 </svg>
                                             </div>
-                                            <?= $facilities; ?>
+                                            <?
+
+                                            if (is_string($facilities)) {
+                                                echo $facilities;
+                                            } elseif (is_array($facilities) && count($facilities) > 0) {
+
+
+                                                foreach ($facilities as $i => $facility) {
+                                                    if($i == 0) {
+                                                        $facility = mb_strtoupper(mb_substr($facility, 0, 1))
+                                                            . mb_substr($facility,  1);
+                                                    };
+
+
+                                                    echo $facility . ', ';
+                                                }
+
+                                            }
+                                            ?>
                                         </div>
                                         <div class="apartment__columns">
                                             <div class="apartment__column apartment__column--more">
