@@ -842,7 +842,8 @@ html {
 }
 
 .about__header {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    margin-top: 80px;
 }
 
 .about__image {
@@ -899,6 +900,11 @@ html {
 
 .resort-betta-list__container .about__text p {
     margin-bottom: 1.0rem;
+}
+
+
+.home-about .about__text p {
+    margin-top: 10px;
 }
 
 

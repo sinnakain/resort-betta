@@ -39,7 +39,7 @@ function config($key = '')
         // Page configuration todo remove this
         'pages_config' => [
             'home' => [
-                'hero_image' => '/img/hero-pick-up-bg.png',
+                'hero_image' => 'img/hero/hero-sea.png',
                 'body_classname' => 'app--home',
                 'modules' => ['reviews']
             ],
@@ -49,24 +49,24 @@ function config($key = '')
                 'modules' => ['reviews']
             ],
             'reservation' => [
-                'hero_image' => '/img/hero-pick-up-bg.png',
+                'hero_image' => '/img/hero/hero_veranda.jpg',
                 'body_classname' => 'app--reservation',
                 'modules' => ['reviews']
             ],
             'how-to-get' => [
-                'hero_image' => '/img/hero-pick-up-bg.png',
+                'hero_image' => '/img/hero/hero_k4.png',
                 'body_classname' => 'app--how-to-get',
             ],
             'resort-betta' => [
-                'hero_image' => '/img/hero-pick-up-bg.png',
+                'hero_image' => '/img/hero/hero_mangal.jpg',
                 'body_classname' => 'app--resort-betta',
             ],
             'contacts' => [
-                'hero_image' => '/img/hero-pick-up-bg.png',
+                'hero_image' => '/img/hero/hero_interior.jpg',
                 'body_classname' => 'app--contacts',
             ],
             'reservation/apartment' => [
-                'hero_image' => '/img/hero-pick-up-bg.png',
+                'hero_image' => '/img/hero/hero_mangal.jpg',
                 'body_classname' => 'app--card',
                 'modules' => ['reviews']
             ]
