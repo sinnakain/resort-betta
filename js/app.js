@@ -670,6 +670,10 @@ $(function () {
         $('.js-form').on('submit', function (event) {
             event.preventDefault();
 
+            // Send yandex metrka goal
+            console.log("Send yandex metrika goal: send_reservation_request");
+            ym(51992357,'reachGoal','send_reservation_request');
+
             var name = $("#form_name").val();
             var infdata = $("#form_infdata").val();
             var phone = $("#form_phone").val();
